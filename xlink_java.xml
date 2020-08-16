@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<xlink-java>
+    <xlink>
+        <language>java</language>
+        <from>java</from>
+        <to>c,cpp</to>
+        <type>modifier</type>
+        <modifier>native</modifier>
+    </xlink>
+</xlink-java>

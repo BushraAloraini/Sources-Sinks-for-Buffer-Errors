@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xlink-native>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jobject</return-type>
+        <api>CallStaticObjectMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jobject</return-type>
+        <api>CallStaticObjectMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jobject</return-type>
+        <api>CallStaticObjectMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jboolean</return-type>
+        <api>CallStaticBooleanMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jboolean</return-type>
+        <api>CallStaticBooleanMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID,va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jboolean</return-type>
+        <api>CallStaticBooleanMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID,jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jbyte</return-type>
+        <api>CallStaticByteMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jbyte</return-type>
+        <api>CallStaticByteMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jbyte</return-type>
+        <api>CallStaticByteMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jchar</return-type>
+        <api>CallStaticCharMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jchar</return-type>
+        <api>CallStaticCharMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jchar</return-type>
+        <api>CallStaticCharMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jshort</return-type>
+        <api>CallStaticShortMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jshort</return-type>
+        <api>CallStaticShortMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jshort</return-type>
+        <api>CallStaticShortMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jint</return-type>
+        <api>CallStaticIntMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jint</return-type>
+        <api>CallStaticIntMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jint</return-type>
+        <api>CallStaticIntMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jlong</return-type>
+        <api>CallStaticLongMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jlong</return-type>
+        <api>CallStaticLongMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jlong</return-type>
+        <api>CallStaticLongMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jfloat</return-type>
+        <api>CallStaticFloatMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jfloat</return-type>
+        <api>CallStaticFloatMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jfloat</return-type>
+        <api>CallStaticFloatMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jdouble</return-type>
+        <api>CallStaticDoubleMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jdouble</return-type>
+        <api>CallStaticDoubleMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jdouble</return-type>
+        <api>CallStaticDoubleMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>void</return-type>
+        <api>CallStaticVoidMethod</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>void</return-type>
+        <api>CallStaticVoidMethodV</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>void</return-type>
+        <api>CallStaticVoidMethodA</api>
+        <parameter-type>(JNIEnv*, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jobject</return-type>
+        <api>CallObjectMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jobject</return-type>
+        <api>CallObjectMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jobject</return-type>
+        <api>CallObjectMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jboolean</return-type>
+        <api>CallBooleanMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jboolean</return-type>
+        <api>CallBooleanMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jboolean</return-type>
+        <api>CallBooleanMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jbyte</return-type>
+        <api>CallByteMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jbyte</return-type>
+        <api>CallByteMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jbyte</return-type>
+        <api>CallByteMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jchar</return-type>
+        <api>CallCharMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jchar</return-type>
+        <api>CallCharMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jchar</return-type>
+        <api>CallCharMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jshort</return-type>
+        <api>CallShortMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jshort</return-type>
+        <api>CallShortMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jshort</return-type>
+        <api>CallShortMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jint</return-type>
+        <api>CallIntMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jint</return-type>
+        <api>CallIntMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jint</return-type>
+        <api>CallIntMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jlong</return-type>
+        <api>CallLongMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jlong</return-type>
+        <api>CallLongMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jlong</return-type>
+        <api>CallLongMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jfloat</return-type>
+        <api>CallFloatMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jfloat</return-type>
+        <api>CallFloatMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jfloat</return-type>
+        <api>CallFloatMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jdouble</return-type>
+        <api>CallDoubleMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jdouble</return-type>
+        <api>CallDoubleMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jdouble</return-type>
+        <api>CallDoubleMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>void</return-type>
+        <api>CallVoidMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>void</return-type>
+        <api>CallVoidMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>void</return-type>
+        <api>CallVoidMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jobject</return-type>
+        <api>CallNonvirtualObjectMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jobject</return-type>
+        <api>CallNonvirtualObjectMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jobject</return-type>
+        <api>CallNonvirtualObjectMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jboolean</return-type>
+        <api>CallNonvirtualBooleanMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jboolean</return-type>
+        <api>CallNonvirtualBooleanMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jboolean</return-type>
+        <api>CallNonvirtualBooleanMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jbyte</return-type>
+        <api>CallNonvirtualByteMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jbyte</return-type>
+        <api>CallNonvirtualByteMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jbyte</return-type>
+        <api>CallNonvirtualByteMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jchar</return-type>
+        <api>CallNonvirtualCharMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jchar</return-type>
+        <api>CallNonvirtualCharMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jchar</return-type>
+        <api>CallNonvirtualCharMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jshort</return-type>
+        <api>CallNonvirtualShortMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <type>api</type>
+        <return-type>jshort</return-type>
+        <api>CallNonvirtualShortMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jshort</return-type>
+        <api>CallNonvirtualShortMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jint</return-type>
+        <api>CallNonvirtualIntMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jint</return-type>
+        <api>CallNonvirtualIntMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jint</return-type>
+        <api>CallNonvirtualIntMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jlong</return-type>
+        <api>CallNonvirtualLongMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jlong</return-type>
+        <api>CallNonvirtualLongMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jlong</return-type>
+        <api>CallNonvirtualLongMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jfloat</return-type>
+        <api>CallNonvirtualFloatMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jfloat</return-type>
+        <api>CallNonvirtualFloatMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jfloat</return-type>
+        <api>CallNonvirtualFloatMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jdouble</return-type>
+        <api>CallNonvirtualDoubleMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jdouble</return-type>
+        <api>CallNonvirtualDoubleMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>jdouble</return-type>
+        <api>CallNonvirtualDoubleMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>void</return-type>
+        <api>CallNonvirtualVoidMethod</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, ...);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>void</return-type>
+        <api>CallNonvirtualVoidMethodV</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, va_list);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>java</to>
+        <header>jni.h</header>
+        <type>api</type>
+        <return-type>void</return-type>
+        <api>CallNonvirtualVoidMethodA</api>
+        <parameter-type>(JNIEnv*, jobject, jclass, jmethodID, jvalue*);</parameter-type>
+    </xlink>
+    <xlink>
+        <language>c,cpp</language>
+        <header>jni.h</header>
+        <from>java</from>
+        <to>c,cpp</to>
+        <type>modifier</type>
+        <modifier>JNIEXPORT</modifier>
+        <!-- JNIEXPORT void JNICALL -->
+    </xlink>
+    <!-- in C++ JNIEnv*, (first argument is ommited) -->
+    <xlink>
+        <language>c,cpp</language>
+        <from>c,cpp</from>
+        <to>c,cpp</to>
+        <type>modifier</type>
+        <modifier>extern</modifier>
+    </xlink>
+</xlink-native>

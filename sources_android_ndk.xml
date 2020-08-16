@@ -1,0 +1,1111 @@
+<?xml version="1.0"?>
+<!-- Android NDK sources  -->
+<source>
+    <function-name>AAssetDir_getNextFileName</function-name>
+    <synopsis>const char *  AAssetDir_getNextFileName(AAssetDir *assetDir)</synopsis>
+</source>
+<source>
+    <function-name>AAssetManager_fromJava</function-name>
+    <synopsis>AAssetManager * AAssetManager_fromJava( JNIEnv *env, jobject assetManager )</synopsis>
+</source>
+<source>
+    <function-name>AAssetManager_open</function-name>
+    <synopsis>AAsset * AAssetManager_AAssetManager_open(AAssetManager *mgr, const char *filename, int mode)</synopsis>
+</source>
+<source>
+    <function-name>AAssetManager_openDir</function-name>
+    <synopsis>AAssetDir * AAssetManager_openDir(AAssetManager *mgr, const char *dirName)</synopsis>
+</source>
+<source>
+    <function-name>AAsset_getBuffer</function-name>
+    <synopsis>const void *  AAsset_getBuffer(AAsset *asset)</synopsis>
+</source>
+<source>
+    <function-name>AAsset_getLength</function-name>
+    <synopsis>off_t AAsset_getLength( AAsset *asset )</synopsis>
+</source>
+<source>
+    <function-name>AAsset_getLength64</function-name>
+    <synopsis>off64_t AAsset_getLength64( AAsset *asset )</synopsis>
+</source>
+<source>
+    <function-name>AAsset_getRemainingLength</function-name>
+    <synopsis>off_t AAsset_getRemainingLength( AAsset *asset )</synopsis>
+</source>
+<source>
+    <function-name>AAsset_getRemainingLength64</function-name>
+    <synopsis>off64_t AAsset_getRemainingLength64( AAsset *asset )</synopsis>
+</source>
+<source>
+    <function-name>AAsset_openFileDescriptor</function-name>
+    <synopsis>int AAsset_openFileDescriptor( AAsset *asset, off_t *outStart, off_t *outLength )</synopsis>
+</source>
+<source>
+    <function-name>AAsset_openFileDescriptor64</function-name>
+    <synopsis>int AAsset_openFileDescriptor64( AAsset *asset, off64_t *outStart, off64_t *outLength )</synopsis>
+</source>
+<source>
+    <function-name>AAsset_read</function-name>
+    <synopsis>int AAsset_read( AAsset *asset, void *buf, size_t count )</synopsis>
+</source>
+<source>
+    <function-name>AAsset_seek</function-name>
+    <synopsis>off_t AAsset_seek( AAsset *asset, off_t offset, int whence )</synopsis>
+</source>
+<source>
+    <function-name>AAsset_seek64</function-name>
+    <synopsis>off64_t AAsset_seek64( AAsset *asset, off64_t offset, int whence )</synopsis>
+</source>
+<source>
+    <function-name>AAudioStreamBuilder_openStream</function-name>
+    <synopsis>AAudioStreamBuilder_openStream(AAudioStreamBuilder *builder, AAudioStream **stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getBufferCapacityInFrames</function-name>
+    <synopsis>AAudioStream_getBufferCapacityInFrames(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getBufferSizeInFrames</function-name>
+    <synopsis>AAudioStream_getBufferSizeInFrames(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getDeviceId</function-name>
+    <synopsis>AAudioStream_getDeviceId(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getDirection</function-name>
+    <synopsis>AAudioStream_getDirection(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getFormat</function-name>
+    <synopsis>AAudioStream_getFormat(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getFramesPerBurst</function-name>
+    <synopsis>AAudioStream_getFramesPerBurst(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getFramesPerDataCallback</function-name>
+    <synopsis>AAudioStream_getFramesPerDataCallback(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getFramesRead</function-name>
+    <synopsis>AAudioStream_getFramesRead(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getFramesWritten</function-name>
+    <synopsis>AAudioStream_getFramesWritten(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getSampleRate</function-name>
+    <synopsis>AAudioStream_getSampleRate(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getSamplesPerFrame</function-name>
+    <synopsis>AAudioStream_getSamplesPerFrame(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getTimestamp</function-name>
+    <synopsis>AAudioStream_getTimestamp(AAudioStream *stream, clockid_t clockid, int64_t *framePosition, int64_t *timeNanoseconds)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_getUsage</function-name>
+    <synopsis>AAudioStream_getUsage(AAudioStream *stream)</synopsis>
+</source>
+<source>
+    <function-name>AAudioStream_read</function-name>
+    <synopsis>AAudioStream_read(AAudioStream *stream, void *buffer, int32_t numFrames, int64_t timeoutNanoseconds)</synopsis>
+</source>
+<source>
+    <function-name>AAudio_convertResultToText</function-name>
+    <synopsis>AAudio_convertResultToText(aaudio_result_t returnCode)</synopsis>
+</source>
+<source>
+    <function-name>AAudio_convertStreamStateToText</function-name>
+    <synopsis>AAudio_convertStreamStateToText(aaudio_stream_state_t state)</synopsis>
+</source>
+<source>
+    <function-name>AFont_getAxisCount</function-name>
+    <synopsis>AFont_getAxisCount(const AFont *_Nonnull font)</synopsis>
+</source>
+<source>
+    <function-name>AFont_getAxisTag</function-name>
+    <synopsis>AFont_getAxisTag(const AFont *_Nonnull font, uint32_t axisIndex)</synopsis>
+</source>
+<source>
+    <function-name>AFont_getAxisValue</function-name>
+    <synopsis>AFont_getAxisValue(const AFont *_Nonnull font, uint32_t axisIndex)</synopsis>
+</source>
+<source>
+    <function-name>AFont_getCollectionIndex</function-name>
+    <synopsis>AFont_getCollectionIndex(const AFont *_Nonnull font)</synopsis>
+</source>
+<source>
+    <function-name>AFont_getFontFilePath</function-name>
+    <synopsis>AFont_getFontFilePath(const AFont *_Nonnull font)</synopsis>
+</source>
+<source>
+    <function-name>AFont_getLocale</function-name>
+    <synopsis>AFont_getLocale(const AFont *_Nonnull font)</synopsis>
+</source>
+<source>
+    <function-name>AFont_getWeight</function-name>
+    <synopsis>AFont_getWeight(const AFont *_Nonnull font)</synopsis>
+</source>
+<source>
+    <function-name>AHardwareBuffer_acquire</function-name>
+    <synopsis>AHardwareBuffer_acquire(AHardwareBuffer *buffer)</synopsis>
+</source>
+<source>
+    <function-name>AHardwareBuffer_fromHardwareBuffer</function-name>
+    <synopsis>AHardwareBuffer_fromHardwareBuffer(JNIEnv *env, jobject hardwareBufferObj)</synopsis>
+</source>
+<source>
+    <function-name>AHardwareBuffer_recvHandleFromUnixSocket</function-name>
+    <synopsis>AHardwareBuffer_recvHandleFromUnixSocket(int socketFd, AHardwareBuffer **outBuffer)</synopsis>
+</source>
+<source>
+    <function-name>AIBinder_debugGetRefCount</function-name>
+    <synopsis>AIBinder_debugGetRefCount(AIBinder *binder)</synopsis>
+</source>
+<source>
+    <function-name>AIBinder_fromJavaBinder</function-name>
+    <synopsis>AIBinder_fromJavaBinder(JNIEnv *env, jobject binder)</synopsis>
+</source>
+<source>
+    <function-name>AIBinder_getCallingPid</function-name>
+    <synopsis>AIBinder_getCallingPid()</synopsis>
+</source>
+<source>
+    <function-name>AIBinder_getCallingUid</function-name>
+    <synopsis>AIBinder_getCallingUid()</synopsis>
+</source>
+<source>
+    <function-name>AIBinder_getClass</function-name>
+    <synopsis>AIBinder_getClass(AIBinder *binder)</synopsis>
+</source>
+<source>
+    <function-name>AIBinder_getExtension</function-name>
+    <synopsis>AIBinder_getExtension(AIBinder *binder, AIBinder **outExt)</synopsis>
+</source>
+<source>
+    <function-name>AIBinder_getUserData</function-name>
+    <synopsis>AIBinder_getUserData(AIBinder *binder)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoderHeaderInfo_getAlphaFlags</function-name>
+    <synopsis>AImageDecoderHeaderInfo_getAlphaFlags(const AImageDecoderHeaderInfo *)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoderHeaderInfo_getAndroidBitmapFormat</function-name>
+    <synopsis>AImageDecoderHeaderInfo_getAndroidBitmapFormat(const AImageDecoderHeaderInfo *)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoderHeaderInfo_getDataSpace</function-name>
+    <synopsis>AImageDecoderHeaderInfo_getDataSpace(const AImageDecoderHeaderInfo *)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoderHeaderInfo_getHeight</function-name>
+    <synopsis>AImageDecoderHeaderInfo_getHeight(const AImageDecoderHeaderInfo *)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoderHeaderInfo_getMimeType</function-name>
+    <synopsis>AImageDecoderHeaderInfo_getMimeType(const AImageDecoderHeaderInfo *)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoderHeaderInfo_getWidth</function-name>
+    <synopsis>AImageDecoderHeaderInfo_getWidth(const AImageDecoderHeaderInfo *)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoder_computeSampledSize</function-name>
+    <synopsis>AImageDecoder_computeSampledSize(const AImageDecoder *, int sampleSize, int32_t *width, int32_t *height)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoder_createFromAAsset</function-name>
+    <synopsis>AImageDecoder_createFromAAsset(struct AAsset *asset, AImageDecoder **outDecoder)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoder_createFromBuffer</function-name>
+    <synopsis>AImageDecoder_createFromBuffer(const void *buffer, size_t length, AImageDecoder **outDecoder)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoder_createFromFd</function-name>
+    <synopsis>AImageDecoder_createFromFd(int fd, AImageDecoder **outDecoder)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoder_decodeImage</function-name>
+    <synopsis>AImageDecoder_decodeImage(AImageDecoder *decoder, void *pixels, size_t stride, size_t size)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoder_getHeaderInfo</function-name>
+    <synopsis>AImageDecoder_getHeaderInfo(const AImageDecoder *)</synopsis>
+</source>
+<source>
+    <function-name>AImageDecoder_getMinimumStride</function-name>
+    <synopsis>AImageDecoder_getMinimumStride(AImageDecoder *)</synopsis>
+</source>
+<source>
+    <function-name>AImageReader_acquireLatestImage</function-name>
+    <synopsis>AImageReader_acquireLatestImage(AImageReader *reader, AImage **image)</synopsis>
+</source>
+<source>
+    <function-name>AImageReader_acquireLatestImageAsync</function-name>
+    <synopsis>AImageReader_acquireLatestImageAsync(AImageReader *reader, AImage **image, int *acquireFenceFd)</synopsis>
+</source>
+<source>
+    <function-name>AImageReader_acquireNextImage</function-name>
+    <synopsis>AImageReader_acquireNextImage(AImageReader *reader, AImage **image)</synopsis>
+</source>
+<source>
+    <function-name>AImageReader_acquireNextImageAsync</function-name>
+    <synopsis>AImageReader_acquireNextImageAsync(AImageReader *reader, AImage **image, int *acquireFenceFd)</synopsis>
+</source>
+<source>
+    <function-name>AImageReader_getFormat</function-name>
+    <synopsis>AImageReader_getFormat(const AImageReader *reader, int32_t *format)</synopsis>
+</source>
+<source>
+    <function-name>AImageReader_getHeight</function-name>
+    <synopsis>AImageReader_getHeight(const AImageReader *reader, int32_t *height)</synopsis>
+</source>
+<source>
+    <function-name>AImageReader_getMaxImages</function-name>
+    <synopsis>AImageReader_getMaxImages(const AImageReader *reader, int32_t *maxImages)</synopsis>
+</source>
+<source>
+    <function-name>AImageReader_getWidth</function-name>
+    <synopsis>AImageReader_getWidth(const AImageReader *reader, int32_t *width)</synopsis>
+</source>
+<source>
+    <function-name>AImageReader_getWindow</function-name>
+    <synopsis>AImageReader_getWindow(AImageReader *reader, ANativeWindow **window)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getCropRect</function-name>
+    <synopsis>AImage_getCropRect(const AImage *image, AImageCropRect *rect)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getFormat</function-name>
+    <synopsis>AImage_getFormat(const AImage *image, int32_t *format)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getHardwareBuffer</function-name>
+    <synopsis>AImage_getHardwareBuffer(const AImage *image, AHardwareBuffer **buffer)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getHeight</function-name>
+    <synopsis>AImage_getHeight(const AImage *image, int32_t *height)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getNumberOfPlanes</function-name>
+    <synopsis>AImage_getNumberOfPlanes(const AImage *image, int32_t *numPlanes)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getPlaneData</function-name>
+    <synopsis>AImage_getPlaneData(const AImage *image, int planeIdx, uint8_t **data, int *dataLength)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getPlanePixelStride</function-name>
+    <synopsis>AImage_getPlanePixelStride(const AImage *image, int planeIdx, int32_t *pixelStride)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getPlaneRowStride</function-name>
+    <synopsis>AImage_getPlaneRowStride(const AImage *image, int planeIdx, int32_t *rowStride)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getTimestamp</function-name>
+    <synopsis>AImage_getTimestamp(const AImage *image, int64_t *timestampNs)</synopsis>
+</source>
+<source>
+    <function-name>AImage_getWidth</function-name>
+    <synopsis>AImage_getWidth(const AImage *image, int32_t *width)</synopsis>
+</source>
+<source>
+    <function-name>AInputEvent_getDeviceId</function-name>
+    <synopsis>AInputEvent_getDeviceId(const AInputEvent *event)</synopsis>
+</source>
+<source>
+    <function-name>AInputEvent_getSource</function-name>
+    <synopsis>AInputEvent_getSource(const AInputEvent *event)</synopsis>
+</source>
+<source>
+    <function-name>AInputEvent_getType</function-name>
+    <synopsis>AInputEvent_getType(const AInputEvent *event)</synopsis>
+</source>
+<source>
+    <function-name>AInputQueue_getEvent</function-name>
+    <synopsis>AInputQueue_getEvent(AInputQueue *queue, AInputEvent **outEvent)</synopsis>
+</source>
+<source>
+    <function-name>AKeyEvent_getAction</function-name>
+    <synopsis>AKeyEvent_getAction(const AInputEvent *key_event)</synopsis>
+</source>
+<source>
+    <function-name>AKeyEvent_getDownTime</function-name>
+    <synopsis>AKeyEvent_getDownTime(const AInputEvent *key_event)</synopsis>
+</source>
+<source>
+    <function-name>AKeyEvent_getEventTime</function-name>
+    <synopsis>AKeyEvent_getEventTime(const AInputEvent *key_event)</synopsis>
+</source>
+<source>
+    <function-name>AKeyEvent_getFlags</function-name>
+    <synopsis>AKeyEvent_getFlags(const AInputEvent *key_event)</synopsis>
+</source>
+<source>
+    <function-name>AKeyEvent_getKeyCode</function-name>
+    <synopsis>AKeyEvent_getKeyCode(const AInputEvent *key_event)</synopsis>
+</source>
+<source>
+    <function-name>AKeyEvent_getMetaState</function-name>
+    <synopsis>AKeyEvent_getMetaState(const AInputEvent *key_event)</synopsis>
+</source>
+<source>
+    <function-name>AKeyEvent_getRepeatCount</function-name>
+    <synopsis>AKeyEvent_getRepeatCount(const AInputEvent *key_event)</synopsis>
+</source>
+<source>
+    <function-name>AKeyEvent_getScanCode</function-name>
+    <synopsis>AKeyEvent_getScanCode(const AInputEvent *key_event)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodecCryptoInfo_getClearBytes</function-name>
+    <synopsis>AMediaCodecCryptoInfo_getClearBytes(AMediaCodecCryptoInfo *, size_t *dst)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodecCryptoInfo_getEncryptedBytes</function-name>
+    <synopsis>AMediaCodecCryptoInfo_getEncryptedBytes(AMediaCodecCryptoInfo *, size_t *dst)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodecCryptoInfo_getIV</function-name>
+    <synopsis> uint8_t *dst)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodecCryptoInfo_getKey</function-name>
+    <synopsis>AMediaCodecCryptoInfo_getKey(AMediaCodecCryptoInfo *, uint8_t *dst)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodecCryptoInfo_getMode</function-name>
+    <synopsis>AMediaCodecCryptoInfo_getMode(AMediaCodecCryptoInfo *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodecCryptoInfo_getNumSubSamples</function-name>
+    <synopsis>AMediaCodecCryptoInfo_getNumSubSamples(AMediaCodecCryptoInfo *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodecCryptoInfo_setPattern</function-name>
+    <synopsis>AMediaCodecCryptoInfo_setPattern(AMediaCodecCryptoInfo *info, cryptoinfo_pattern_t *pattern)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodec_dequeueInputBuffer</function-name>
+    <synopsis>AMediaCodec_dequeueInputBuffer(AMediaCodec *, int64_t timeoutUs)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodec_getBufferFormat</function-name>
+    <synopsis>AMediaCodec_getBufferFormat(AMediaCodec *, size_t index)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodec_getInputBuffer</function-name>
+    <synopsis>AMediaCodec_getInputBuffer(AMediaCodec *, size_t idx, size_t *out_size)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodec_getInputFormat</function-name>
+    <synopsis>AMediaCodec_getInputFormat(AMediaCodec *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodec_getName</function-name>
+    <synopsis>AMediaCodec_getName(AMediaCodec *, char **out_name)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodec_getOutputBuffer</function-name>
+    <synopsis>AMediaCodec_getOutputBuffer(AMediaCodec *, size_t idx, size_t *out_size)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodec_getOutputFormat</function-name>
+    <synopsis>AMediaCodec_getOutputFormat(AMediaCodec *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodec_queueInputBuffer</function-name>
+    <synopsis>AMediaCodec_queueInputBuffer(AMediaCodec *, size_t idx, _off_t_compat offset, size_t size, uint64_t time, uint32_t flags)</synopsis>
+</source>
+<source>
+    <function-name>AMediaCodec_queueSecureInputBuffer</function-name>
+    <synopsis>AMediaCodec_queueSecureInputBuffer(AMediaCodec *, size_t idx, _off_t_compat offset, AMediaCodecCryptoInfo *, uint64_t time, uint32_t flags)</synopsis>
+</source>
+<source>
+    <function-name>AMediaDrm_getKeyRequest</function-name>
+    <synopsis>AMediaDrm_getKeyRequest(AMediaDrm *, const AMediaDrmScope *scope, const uint8_t *init, size_t initSize, const char *mimeType, AMediaDrmKeyType keyType, const AMediaDrmKeyValue *optionalParameters, size_t numOptionalParameters, const uint8_t **keyRequest, size_t *keyRequestSize)</synopsis>
+</source>
+<source>
+    <function-name>AMediaDrm_getPropertyByteArray</function-name>
+    <synopsis>AMediaDrm_getPropertyByteArray(AMediaDrm *, const char *propertyName, AMediaDrmByteArray *propertyValue)</synopsis>
+</source>
+<source>
+    <function-name>AMediaDrm_getPropertyString</function-name>
+    <synopsis>AMediaDrm_getPropertyString(AMediaDrm *, const char *propertyName, const char **propertyValue)</synopsis>
+</source>
+<source>
+    <function-name>AMediaDrm_getProvisionRequest</function-name>
+    <synopsis>AMediaDrm_getProvisionRequest(AMediaDrm *, const uint8_t **provisionRequest, size_t *provisionRequestSize, const char **serverUrl)</synopsis>
+</source>
+<source>
+    <function-name>AMediaDrm_getSecureStops</function-name>
+    <synopsis>AMediaDrm_getSecureStops(AMediaDrm *, AMediaDrmSecureStop *secureStops, size_t *numSecureStops)</synopsis>
+</source>
+<source>
+    <function-name>AMediaDrm_openSession</function-name>
+    <synopsis>AMediaDrm_openSession(AMediaDrm *, AMediaDrmSessionId *sessionId)</synopsis>
+</source>
+<source>
+    <function-name>AMediaDrm_queryKeyStatus</function-name>
+    <synopsis>AMediaDrm_queryKeyStatus(AMediaDrm *, const AMediaDrmSessionId *sessionId, AMediaDrmKeyValue *keyValuePairs, size_t *numPairs)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getCachedDuration</function-name>
+    <synopsis>AMediaExtractor_getCachedDuration(AMediaExtractor *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getFileFormat</function-name>
+    <synopsis>AMediaExtractor_getFileFormat(AMediaExtractor *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getPsshInfo</function-name>
+    <synopsis>AMediaExtractor_getPsshInfo(AMediaExtractor *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getSampleCryptoInfo</function-name>
+    <synopsis>AMediaExtractor_getSampleCryptoInfo(AMediaExtractor *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getSampleFlags</function-name>
+    <synopsis>AMediaExtractor_getSampleFlags(AMediaExtractor *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getSampleFormat</function-name>
+    <synopsis>AMediaExtractor_getSampleFormat(AMediaExtractor *ex, AMediaFormat *fmt)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getSampleSize</function-name>
+    <synopsis>AMediaExtractor_getSampleSize(AMediaExtractor *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getSampleTime</function-name>
+    <synopsis>AMediaExtractor_getSampleTime(AMediaExtractor *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getSampleTrackIndex</function-name>
+    <synopsis>AMediaExtractor_getSampleTrackIndex(AMediaExtractor *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getTrackCount</function-name>
+    <synopsis>AMediaExtractor_getTrackCount(AMediaExtractor *)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_getTrackFormat</function-name>
+    <synopsis>AMediaExtractor_getTrackFormat(AMediaExtractor *, size_t idx)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_readSampleData</function-name>
+    <synopsis>AMediaExtractor_readSampleData(AMediaExtractor *, uint8_t *buffer, size_t capacity)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_seekTo</function-name>
+    <synopsis>AMediaExtractor_seekTo(AMediaExtractor *, int64_t seekPosUs, SeekMode mode)</synopsis>
+</source>
+<source>
+    <function-name>AMediaExtractor_selectTrack</function-name>
+    <synopsis>AMediaExtractor_selectTrack(AMediaExtractor *, size_t idx)</synopsis>
+</source>
+<source>
+    <function-name>AMediaFormat_getBuffer</function-name>
+    <synopsis>AMediaFormat_getBuffer(AMediaFormat *, const char *name, void **data, size_t *size)</synopsis>
+</source>
+<source>
+    <function-name>AMediaFormat_getDouble</function-name>
+    <synopsis>AMediaFormat_getDouble(AMediaFormat *, const char *name, double *out)</synopsis>
+</source>
+<source>
+    <function-name>AMediaFormat_getFloat</function-name>
+    <synopsis>AMediaFormat_getFloat(AMediaFormat *, const char *name, float *out)</synopsis>
+</source>
+<source>
+    <function-name>AMediaFormat_getInt32</function-name>
+    <synopsis>AMediaFormat_getInt32(AMediaFormat *, const char *name, int32_t *out)</synopsis>
+</source>
+<source>
+    <function-name>AMediaFormat_getInt64</function-name>
+    <synopsis>AMediaFormat_getInt64(AMediaFormat *, const char *name, int64_t *out)</synopsis>
+</source>
+<source>
+    <function-name>AMediaFormat_getRect</function-name>
+    <synopsis>AMediaFormat_getRect(AMediaFormat *, const char *name, int32_t *left, int32_t *top, int32_t *right, int32_t *bottom)</synopsis>
+</source>
+<source>
+    <function-name>AMediaFormat_getSize</function-name>
+    <synopsis>AMediaFormat_getSize(AMediaFormat *, const char *name, size_t *out)</synopsis>
+</source>
+<source>
+    <function-name>AMediaFormat_getString</function-name>
+    <synopsis>AMediaFormat_getString(AMediaFormat *, const char *name, const char **out)</synopsis>
+</source>
+<source>
+    <function-name>AMidiDevice_fromJava</function-name>
+    <synopsis>AMidiDevice_fromJava(JNIEnv *env, jobject midiDeviceObj, AMidiDevice **outDevicePtrPtr)</synopsis>
+</source>
+<source>
+    <function-name>AMidiDevice_getNumInputPorts</function-name>
+    <synopsis>AMidiDevice_getNumInputPorts(const AMidiDevice *device)</synopsis>
+</source>
+<source>
+    <function-name>AMidiDevice_getNumOutputPorts</function-name>
+    <synopsis>AMidiDevice_getNumOutputPorts(const AMidiDevice *device)</synopsis>
+</source>
+<source>
+    <function-name>AMidiDevice_getType</function-name>
+    <synopsis>AMidiDevice_getType(const AMidiDevice *device)</synopsis>
+</source>
+<source>
+    <function-name>AMidiInputPort_open</function-name>
+    <synopsis>AMidiInputPort_open(const AMidiDevice *device, int32_t portNumber, AMidiInputPort **outInputPortPtr)</synopsis>
+</source>
+<source>
+    <function-name>AMidiOutputPort_open</function-name>
+    <synopsis>AMidiOutputPort_open(const AMidiDevice *device, int32_t portNumber, AMidiOutputPort **outOutputPortPtr)</synopsis>
+</source>
+<source>
+    <function-name>AMidiOutputPort_receive</function-name>
+    <synopsis>AMidiOutputPort_receive(const AMidiOutputPort *outputPort, int32_t *opcodePtr, uint8_t *buffer, size_t maxBytes, size_t *numBytesReceivedPtr, int64_t *outTimestampPtr)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getAction</function-name>
+    <synopsis>AMotionEvent_getAction(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getAxisValue</function-name>
+    <synopsis>AMotionEvent_getAxisValue(const AInputEvent *motion_event, int32_t axis, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getButtonState</function-name>
+    <synopsis>AMotionEvent_getButtonState(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getDownTime</function-name>
+    <synopsis>AMotionEvent_getDownTime(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getEdgeFlags</function-name>
+    <synopsis>AMotionEvent_getEdgeFlags(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getEventTime</function-name>
+    <synopsis>AMotionEvent_getEventTime(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getFlags</function-name>
+    <synopsis>AMotionEvent_getFlags(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalAxisValue</function-name>
+    <synopsis>AMotionEvent_getHistoricalAxisValue(const AInputEvent *motion_event, int32_t axis, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalEventTime</function-name>
+    <synopsis>AMotionEvent_getHistoricalEventTime(const AInputEvent *motion_event, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalOrientation</function-name>
+    <synopsis>AMotionEvent_getHistoricalOrientation(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalPressure</function-name>
+    <synopsis>AMotionEvent_getHistoricalPressure(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalRawX</function-name>
+    <synopsis>AMotionEvent_getHistoricalRawX(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalRawY</function-name>
+    <synopsis>AMotionEvent_getHistoricalRawY(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalSize</function-name>
+    <synopsis>AMotionEvent_getHistoricalSize(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalToolMajor</function-name>
+    <synopsis>AMotionEvent_getHistoricalToolMajor(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalToolMinor</function-name>
+    <synopsis>AMotionEvent_getHistoricalToolMinor(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalTouchMajor</function-name>
+    <synopsis>AMotionEvent_getHistoricalTouchMajor(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalTouchMinor</function-name>
+    <synopsis>AMotionEvent_getHistoricalTouchMinor(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalX</function-name>
+    <synopsis>AMotionEvent_getHistoricalX(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistoricalY</function-name>
+    <synopsis>AMotionEvent_getHistoricalY(const AInputEvent *motion_event, size_t pointer_index, size_t history_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getHistorySize</function-name>
+    <synopsis>AMotionEvent_getHistorySize(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getMetaState</function-name>
+    <synopsis>AMotionEvent_getMetaState(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getOrientation</function-name>
+    <synopsis>AMotionEvent_getOrientation(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getPointerCount</function-name>
+    <synopsis>AMotionEvent_getPointerCount(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getPointerId</function-name>
+    <synopsis>AMotionEvent_getPointerId(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getPressure</function-name>
+    <synopsis>AMotionEvent_getPressure(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getRawX</function-name>
+    <synopsis>AMotionEvent_getRawX(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getRawY</function-name>
+    <synopsis>AMotionEvent_getRawY(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getSize</function-name>
+    <synopsis>AMotionEvent_getSize(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getToolMajor</function-name>
+    <synopsis>AMotionEvent_getToolMajor(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getToolMinor</function-name>
+    <synopsis>AMotionEvent_getToolMinor(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getToolType</function-name>
+    <synopsis>AMotionEvent_getToolType(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getTouchMajor</function-name>
+    <synopsis>AMotionEvent_getTouchMajor(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getTouchMinor</function-name>
+    <synopsis>AMotionEvent_getTouchMinor(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getX</function-name>
+    <synopsis>AMotionEvent_getX(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getXOffset</function-name>
+    <synopsis>AMotionEvent_getXOffset(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getXPrecision</function-name>
+    <synopsis>AMotionEvent_getXPrecision(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getY</function-name>
+    <synopsis>AMotionEvent_getY(const AInputEvent *motion_event, size_t pointer_index)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getYOffset</function-name>
+    <synopsis>AMotionEvent_getYOffset(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>AMotionEvent_getYPrecision</function-name>
+    <synopsis>AMotionEvent_getYPrecision(const AInputEvent *motion_event)</synopsis>
+</source>
+<source>
+    <function-name>ANativeWindow_acquire</function-name>
+    <synopsis>ANativeWindow_acquire(ANativeWindow *window)</synopsis>
+</source>
+<source>
+    <function-name>ANativeWindow_getBuffersDataSpace</function-name>
+    <synopsis>ANativeWindow_getBuffersDataSpace(ANativeWindow *window)</synopsis>
+</source>
+<source>
+    <function-name>ANativeWindow_getFormat</function-name>
+    <synopsis>ANativeWindow_getFormat(ANativeWindow *window)</synopsis>
+</source>
+<source>
+    <function-name>ANativeWindow_getHeight</function-name>
+    <synopsis>ANativeWindow_getHeight(ANativeWindow *window)</synopsis>
+</source>
+<source>
+    <function-name>ANativeWindow_getWidth</function-name>
+    <synopsis>ANativeWindow_getWidth(ANativeWindow *window)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworksDevice_getFeatureLevel</function-name>
+    <synopsis>ANeuralNetworksDevice_getFeatureLevel(const ANeuralNetworksDevice *device, int64_t *featureLevel)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworksDevice_getName</function-name>
+    <synopsis>ANeuralNetworksDevice_getName(const ANeuralNetworksDevice *device, const char **name)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworksDevice_getType</function-name>
+    <synopsis>ANeuralNetworksDevice_getType(const ANeuralNetworksDevice *device, int32_t *type)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworksDevice_getVersion</function-name>
+    <synopsis>ANeuralNetworksDevice_getVersion(const ANeuralNetworksDevice *device, const char **version)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworksEvent_getSyncFenceFd</function-name>
+    <synopsis>ANeuralNetworksEvent_getSyncFenceFd(const ANeuralNetworksEvent *event, int *sync_fence_fd)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworksExecution_getDuration</function-name>
+    <synopsis>ANeuralNetworksExecution_getDuration(const ANeuralNetworksExecution *execution, int32_t durationCode, uint64_t *duration)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworksExecution_getOutputOperandDimensions</function-name>
+    <synopsis>ANeuralNetworksExecution_getOutputOperandDimensions(ANeuralNetworksExecution *execution, int32_t index, uint32_t *dimensions)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworksExecution_getOutputOperandRank</function-name>
+    <synopsis>ANeuralNetworksExecution_getOutputOperandRank(ANeuralNetworksExecution *execution, int32_t index, uint32_t *rank)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworksModel_getSupportedOperationsForDevices</function-name>
+    <synopsis>ANeuralNetworksModel_getSupportedOperationsForDevices(const ANeuralNetworksModel *model, const ANeuralNetworksDevice *const *devices, uint32_t numDevices, bool *supportedOps)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworks_getDefaultLoopTimeout</function-name>
+    <synopsis>ANeuralNetworks_getDefaultLoopTimeout()</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworks_getDevice</function-name>
+    <synopsis>ANeuralNetworks_getDevice(uint32_t devIndex, ANeuralNetworksDevice **device)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworks_getDeviceCount</function-name>
+    <synopsis>ANeuralNetworks_getDeviceCount(uint32_t *numDevices)</synopsis>
+</source>
+<source>
+    <function-name>ANeuralNetworks_getMaximumLoopTimeout</function-name>
+    <synopsis>ANeuralNetworks_getMaximumLoopTimeout()</synopsis>
+</source>
+<source>
+    <function-name>AObbInfo_getFlags</function-name>
+    <synopsis>AObbInfo_getFlags(AObbInfo *obbInfo)</synopsis>
+</source>
+<source>
+    <function-name>AObbInfo_getPackageName</function-name>
+    <synopsis>AObbInfo_getPackageName(AObbInfo *obbInfo)</synopsis>
+</source>
+<source>
+    <function-name>AObbInfo_getVersion</function-name>
+    <synopsis>AObbInfo_getVersion(AObbInfo *obbInfo)</synopsis>
+</source>
+<source>
+    <function-name>AObbScanner_getObbInfo</function-name>
+    <synopsis>AObbScanner_getObbInfo(const char *filename)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_fromJavaParcel</function-name>
+    <synopsis>AParcel_fromJavaParcel(JNIEnv *env, jobject parcel)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_getDataPosition</function-name>
+    <synopsis>AParcel_getDataPosition(const AParcel *parcel)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readBool</function-name>
+    <synopsis>AParcel_readBool(const AParcel *parcel, bool *value)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readBoolArray</function-name>
+    <synopsis>AParcel_readBoolArray(const AParcel *parcel, void *arrayData, AParcel_boolArrayAllocator allocator, AParcel_boolArraySetter setter)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readByte</function-name>
+    <synopsis>AParcel_readByte(const AParcel *parcel, int8_t *value)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readByteArray</function-name>
+    <synopsis>AParcel_readByteArray(const AParcel *parcel, void *arrayData, AParcel_byteArrayAllocator allocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readChar</function-name>
+    <synopsis>AParcel_readChar(const AParcel *parcel, char16_t *value)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readCharArray</function-name>
+    <synopsis>AParcel_readCharArray(const AParcel *parcel, void *arrayData, AParcel_charArrayAllocator allocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readDouble</function-name>
+    <synopsis>AParcel_readDouble(const AParcel *parcel, double *value)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readDoubleArray</function-name>
+    <synopsis>AParcel_readDoubleArray(const AParcel *parcel, void *arrayData, AParcel_doubleArrayAllocator allocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readFloat</function-name>
+    <synopsis>AParcel_readFloat(const AParcel *parcel, float *value)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readFloatArray</function-name>
+    <synopsis>AParcel_readFloatArray(const AParcel *parcel, void *arrayData, AParcel_floatArrayAllocator allocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readInt32</function-name>
+    <synopsis>AParcel_readInt32(const AParcel *parcel, int32_t *value)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readInt32Array</function-name>
+    <synopsis>AParcel_readInt32Array(const AParcel *parcel, void *arrayData, AParcel_int32ArrayAllocator allocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readInt64</function-name>
+    <synopsis>AParcel_readInt64(const AParcel *parcel, int64_t *value)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readInt64Array</function-name>
+    <synopsis>AParcel_readInt64Array(const AParcel *parcel, void *arrayData, AParcel_int64ArrayAllocator allocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readParcelFileDescriptor</function-name>
+    <synopsis>AParcel_readParcelFileDescriptor(const AParcel *parcel, int *fd)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readParcelableArray</function-name>
+    <synopsis>AParcel_readParcelableArray(const AParcel *parcel, void *arrayData, AParcel_parcelableArrayAllocator allocator, AParcel_readParcelableElement elementReader)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readStatusHeader</function-name>
+    <synopsis>AParcel_readStatusHeader(const AParcel *parcel, AStatus **status)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readString</function-name>
+    <synopsis>AParcel_readString(const AParcel *parcel, void *stringData, AParcel_stringAllocator allocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readStringArray</function-name>
+    <synopsis>AParcel_readStringArray(const AParcel *parcel, void *arrayData, AParcel_stringArrayAllocator allocator, AParcel_stringArrayElementAllocator elementAllocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readStrongBinder</function-name>
+    <synopsis>AParcel_readStrongBinder(const AParcel *parcel, AIBinder **binder)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readUint32</function-name>
+    <synopsis>AParcel_readUint32(const AParcel *parcel, uint32_t *value)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readUint32Array</function-name>
+    <synopsis>AParcel_readUint32Array(const AParcel *parcel, void *arrayData, AParcel_uint32ArrayAllocator allocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readUint64</function-name>
+    <synopsis>AParcel_readUint64(const AParcel *parcel, uint64_t *value)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_readUint64Array</function-name>
+    <synopsis>AParcel_readUint64Array(const AParcel *parcel, void *arrayData, AParcel_uint64ArrayAllocator allocator)</synopsis>
+</source>
+<source>
+    <function-name>AParcel_setDataPosition</function-name>
+    <synopsis>AParcel_setDataPosition(const AParcel *parcel, int32_t position)</synopsis>
+</source>
+<source>
+    <function-name>ASensorEventQueue_getEvents</function-name>
+    <synopsis>ASensorEventQueue_getEvents(ASensorEventQueue *queue, ASensorEvent *events, size_t count)</synopsis>
+</source>
+<source>
+    <function-name>ASensorManager_getDefaultSensor</function-name>
+    <synopsis>ASensorManager_getDefaultSensor(ASensorManager *manager, int type)</synopsis>
+</source>
+<source>
+    <function-name>ASensorManager_getDefaultSensorEx</function-name>
+    <synopsis>ASensorManager_getDefaultSensorEx(ASensorManager *manager, int type, bool wakeUp)</synopsis>
+</source>
+<source>
+    <function-name>ASensorManager_getInstance</function-name>
+    <synopsis>ASensorManager_getInstance()</synopsis>
+</source>
+<source>
+    <function-name>ASensorManager_getInstanceForPackage</function-name>
+    <synopsis>ASensorManager_getInstanceForPackage(const char *packageName)</synopsis>
+</source>
+<source>
+    <function-name>ASensorManager_getSensorList</function-name>
+    <synopsis>ASensorManager_getSensorList(ASensorManager *manager, ASensorList *list)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getFifoMaxEventCount</function-name>
+    <synopsis>ASensor_getFifoMaxEventCount(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getFifoReservedEventCount</function-name>
+    <synopsis>ASensor_getFifoReservedEventCount(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getHandle</function-name>
+    <synopsis>ASensor_getHandle(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getHighestDirectReportRateLevel</function-name>
+    <synopsis>ASensor_getHighestDirectReportRateLevel(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getMinDelay</function-name>
+    <synopsis>ASensor_getMinDelay(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getName</function-name>
+    <synopsis>ASensor_getName(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getReportingMode</function-name>
+    <synopsis>ASensor_getReportingMode(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getResolution</function-name>
+    <synopsis>ASensor_getResolution(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getStringType</function-name>
+    <synopsis>ASensor_getStringType(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getType</function-name>
+    <synopsis>ASensor_getType(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASensor_getVendor</function-name>
+    <synopsis>ASensor_getVendor(ASensor const *sensor)</synopsis>
+</source>
+<source>
+    <function-name>ASharedMemory_dupFromJava</function-name>
+    <synopsis>ASharedMemory_dupFromJava(JNIEnv *env, jobject sharedMemory)</synopsis>
+</source>
+<source>
+    <function-name>ASharedMemory_getSize</function-name>
+    <synopsis>ASharedMemory_getSize(int fd)</synopsis>
+</source>
+<source>
+    <function-name>AStatus_getDescription</function-name>
+    <synopsis>AStatus_getDescription(const AStatus *status)</synopsis>
+</source>
+<source>
+    <function-name>AStatus_getExceptionCode</function-name>
+    <synopsis>AStatus_getExceptionCode(const AStatus *status)</synopsis>
+</source>
+<source>
+    <function-name>AStatus_getMessage</function-name>
+    <synopsis>AStatus_getMessage(const AStatus *status)</synopsis>
+</source>
+<source>
+    <function-name>AStatus_getServiceSpecificError</function-name>
+    <synopsis>AStatus_getServiceSpecificError(const AStatus *status)</synopsis>
+</source>
+<source>
+    <function-name>AStatus_getStatus</function-name>
+    <synopsis>AStatus_getStatus(const AStatus *status)</synopsis>
+</source>
+<source>
+    <function-name>AStorageManager_getMountedObbPath</function-name>
+    <synopsis>AStorageManager_getMountedObbPath(AStorageManager *mgr, const char *filename)</synopsis>
+</source>
+<source>
+    <function-name>ASurfaceTexture_acquireANativeWindow</function-name>
+    <synopsis>ASurfaceTexture_acquireANativeWindow(ASurfaceTexture *st)</synopsis>
+</source>
+<source>
+    <function-name>ASurfaceTexture_fromSurfaceTexture</function-name>
+    <synopsis>ASurfaceTexture_fromSurfaceTexture(JNIEnv *env, jobject surfacetexture)</synopsis>
+</source>
+<source>
+    <function-name>ASurfaceTexture_getTimestamp</function-name>
+    <synopsis>ASurfaceTexture_getTimestamp(ASurfaceTexture *st)</synopsis>
+</source>
+<source>
+    <function-name>ASurfaceTexture_getTransformMatrix</function-name>
+    <synopsis>ASurfaceTexture_getTransformMatrix(ASurfaceTexture *st, float mtx[16])</synopsis>
+</source>
+<source>
+    <function-name>ASurfaceTransactionStats_getASurfaceControls</function-name>
+    <synopsis>ASurfaceTransactionStats_getASurfaceControls(ASurfaceTransactionStats *surface_transaction_stats, ASurfaceControl ***outASurfaceControls, size_t *outASurfaceControlsSize)</synopsis>
+</source>
+<source>
+    <function-name>ASurfaceTransactionStats_getAcquireTime</function-name>
+    <synopsis>ASurfaceTransactionStats_getAcquireTime(ASurfaceTransactionStats *surface_transaction_stats, ASurfaceControl *surface_control)</synopsis>
+</source>
+<source>
+    <function-name>ASurfaceTransactionStats_getLatchTime</function-name>
+    <synopsis>ASurfaceTransactionStats_getLatchTime(ASurfaceTransactionStats *surface_transaction_stats)</synopsis>
+</source>
+<source>
+    <function-name>ASurfaceTransactionStats_getPresentFenceFd</function-name>
+    <synopsis>ASurfaceTransactionStats_getPresentFenceFd(ASurfaceTransactionStats *surface_transaction_stats)</synopsis>
+</source>
+<source>
+    <function-name>ASurfaceTransactionStats_getPreviousReleaseFenceFd</function-name>
+    <synopsis>ASurfaceTransactionStats_getPreviousReleaseFenceFd(ASurfaceTransactionStats *surface_transaction_stats, ASurfaceControl *surface_control)</synopsis>
+</source>
+<source>
+    <function-name>AThermal_getCurrentThermalStatus</function-name>
+    <synopsis>AThermal_getCurrentThermalStatus(AThermalManager *manager)</synopsis>
+</source>
+<source>
+    <function-name>AndroidBitmap_getDataSpace</function-name>
+    <synopsis>AndroidBitmap_getDataSpace(JNIEnv *env, jobject jbitmap)</synopsis>
+</source>
+<source>
+    <function-name>AndroidBitmap_getHardwareBuffer</function-name>
+    <synopsis>AndroidBitmap_getHardwareBuffer(JNIEnv *env, jobject bitmap, AHardwareBuffer **outBuffer)</synopsis>
+</source>
+<source>
+    <function-name>AndroidBitmap_getInfo</function-name>
+    <synopsis>AndroidBitmap_getInfo(JNIEnv *env, jobject jbitmap, AndroidBitmapInfo *info)</synopsis>
+</source>
+<source>
+    <function-name>android_dlopen_ext</function-name>
+    <synopsis>void * android_dlopen_ext( const char *__filename, int __flags, const android_dlextinfo *__info )</synopsis>
+</source>
+<source>
+    <function-name>android_getaddrinfofornetwork</function-name>
+    <synopsis>android_getaddrinfofornetwork(net_handle_t network, const char *node, const char *service, const struct addrinfo *hints, struct addrinfo **res)</synopsis>
+</source>
+<source>
+    <function-name>android_res_nquery</function-name>
+    <synopsis>android_res_nquery(net_handle_t network, const char *dname, int ns_class, int ns_type, uint32_t flags)</synopsis>
+</source>
+<source>
+    <function-name>android_res_nresult</function-name>
+    <synopsis>android_res_nresult(int fd, int *rcode, uint8_t *answer, size_t anslen)</synopsis>
+</source>
+<source>
+    <function-name>sync_file_info</function-name>
+    <synopsis>sync_file_info(int32_t fd)</synopsis>
+</source>
+<source>
+    <function-name>sync_get_fence_info</function-name>
+    <synopsis>sync_get_fence_info(const struct sync_file_info *info)</synopsis>
+</source>undefined</source-sink-native>
+

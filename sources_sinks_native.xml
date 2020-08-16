@@ -1,0 +1,3204 @@
+<?xml version="1.0"?>
+<!--  Description:
+ 
+<parameter-order> tag annotation:
+ src -  source of buffer
+ dst -  destination of buffer
+ size_src - size of  source allocated
+ size_dst - size of  destination allocated
+ len_src  - length of source buffer fetched
+ len_dst  - length of destination buffer fetched
+ inx_src  - source buffer offset
+ inx_dst  - destination buffer offset
+ fd - stream
+ frm - format string
+ str - string
+ char - character
+ num - number
+ <description> tag informatin is copied from diffrent websites such as:
+ https://en.cppreference.com
+ http://www.cplusplus.com/
+ https://linux.die.net/
+ -->
+
+<source-sink-native>
+    <!-- ===================== sources ================================== -->
+    <!-- Note that a function that accepts untrusted input can also include a sink buffer
+     where overflow can happen, yet the untrusted input can travel to another sink -->
+    <source>
+        <function-name>getnetgrent</function-name>
+        <parameter-number>3</parameter-number>
+        <parameter-order>dst,dst,dst</parameter-order>
+        <parameter-type>char **, char **,  char **  </parameter-type>
+        <return-type>int </return-type>
+        <synopsis>int getnetgrent(char **host, char **user, char **domain); </synopsis>
+        <description> handle network group entries </description>
+    </source>
+    <source>
+        <function-name>getnetgrent_r</function-name>
+        <parameter-number>5</parameter-number>
+        <parameter-order>dst,dst,dst,dst,size_dst [4]</parameter-order>
+        <parameter-type>char **, char **, char **, char *, int  </parameter-type>
+        <return-type>int </return-type>
+        <return-value>  These functions return 1 on success and 0 for failure.</return-value>
+        <synopsis>int getnetgrent_r(char **host, char **user, char **domain, char *buf, int buflen);</synopsis>
+        <description> handle network group entries </description>\
+        
+        
+    </source>
+    <source>
+        <function-name>getnetent</function-name>
+        <parameter-number>0</parameter-number>
+        <parameter-order>str, dst,dst,size_dst [3], dst</parameter-order>
+        <parameter-type>void </parameter-type>
+        <return-type>struct netent * </return-type>
+        <return-value>dst</return-value>
+        <synopsis>struct netent *getnetent(void);  </synopsis>
+        <description>reads the next entry from the networks database and returns a netent structure
+            containing the broken-out fields from the entry.
+            A connection is opened to the database if necessary.    </description>
+    </source>
+    <source>
+        <function-name>getnetbyname</function-name>
+        <parameter-number>1</parameter-number>
+        <parameter-order>str</parameter-order>
+        <parameter-type>const char * </parameter-type>
+        <return-type>struct netent * </return-type>
+        <return-value>dst</return-value>
+        <synopsis>struct netent *getnetbyname(const char *name); </synopsis>
+        <description> get network entry </description>
+    </source>
+    <source>
+        <function-name>getnetbyaddr</function-name>
+        <parameter-number>2</parameter-number>
+        <parameter-order>num,num</parameter-order>
+        <parameter-type>uint32_t,int </parameter-type>
+        <return-type>struct netent *</return-type>
+        <return-value>dst</return-value>
+        <synopsis>struct netent *getnetbyaddr(uint32_t net, int type); </synopsis>
+        <description> get network entry </description>
+    </source>
+    <source>
+        <function-name>getmntent</function-name>
+        <parameter-number>1</parameter-number>
+        <parameter-order>fd</parameter-order>
+        <parameter-type>FILE *</parameter-type>
+        <return-type>struct mntent *</return-type>
+        <return-value>dst</return-value>
+        <synopsis>struct mntent *getmntent(FILE *fp); </synopsis>
+        <description>  reads the next line of the filesystem
+            description file from stream and returns a pointer to a structure
+            containing the broken out fields from a line in the file.  The
+            pointer points to a static area of memory which is overwritten by
+            subsequent calls to getmntent().
+        </description>
+    </source>
+    <source>
+        <function-name>getmntent_r</function-name>
+        <parameter-number>4</parameter-number>
+        <parameter-order>fd, dst,dst,dst_size [3]</parameter-order>
+        <parameter-type>FILE *, struct mntent *, char *, int </parameter-type>
+        <return-type>struct mntent *</return-type>
+        <return-value> dst</return-value>
+        <synopsis>struct mntent *getmntent_r(FILE *fp, struct mntent *mntbuf, char *buf, int buflen); </synopsis>
+        <description>get file system descriptor file </description>
+    </source>
+    <source>
+        <function-name>fgetws</function-name>
+        <parameter-number>3</parameter-number>
+        <parameter-order>dst,len_src,src  </parameter-order>
+        <parameter-type>wchar_t *, int , FILE *</parameter-type>
+        <return-type>wchar_t *</return-type>
+        <return-value>dst</return-value>
+        <synopsis> wchar_t *fgetws(wchar_t *ws, int n, FILE *stream); </synopsis>
+        <description>The fgetws() function is the wide-character equivalent of the fgets(3) function.
+            It reads a string of at most n-1 wide characters into the wide-character array pointed to by ws,
+            and adds a terminating null wide character (Laq\0aq). It stops reading wide characters after it has
+            encountered and stored a newline wide character. It also stops when end of stream is reached.
+        </description>
+    </source>
+    <source>
+        <function-name>fgets_unlocked</function-name>
+        <parameter-number>3</parameter-number>
+        <parameter-order>dst,len_src,src   </parameter-order>
+        <parameter-type>char *, int , FILE *</parameter-type>
+        <return-type>char *</return-type>
+        <return-value>dst</return-value>
+        <synopsis>char *fgets_unlocked(char *s, int n, FILE *stream); </synopsis>
+        <description></description>
+    </source>
+    <source>
+        <function-name>fgetws_unlocked</function-name>
+        <parameter-number>3</parameter-number>
+        <parameter-order>dst,len_src,src   </parameter-order>
+        <parameter-type>wchar_t *, int , FILE *</parameter-type>
+        <return-type>wchar_t  *</return-type>
+        <return-value>dst</return-value>
+        <synopsis> wchar_t *fgetws_unlocked(wchar_t *ws, int n, FILE *stream);</synopsis>
+        <description>fgetws_unlocked -- non-thread-safe fgetws </description>
+    </source>
+    <source>
+        <function-name>readline</function-name>
+        <parameter-number>1</parameter-number>
+        <parameter-order>str</parameter-order>
+        <parameter-type>const char *</parameter-type>
+        <return-type>char *</return-type>
+        <return-value>dst</return-value>
+        <return-value>readline returns the text of the line read.  A blank line returns the
+            empty string.  If EOF is encountered while reading a line, and the
+            line is empty, NULL is returned.  If an EOF is read with a non-empty
+            line, it is treated as a newline.</return-value>
+        <synopsis> char * readline (const char *prompt); </synopsis>
+        <description> get a line from a user with editing</description>
+        <info>The line returned is allocated with malloc; the caller
+            must free it when finished.  The line returned has the final newline
+            removed, so only the text of the line remains.</info>
+    </source>
+    <source>
+        <function-name>gets</function-name>
+        <parameter-number>1</parameter-number>
+        <parameter-order>dst</parameter-order>
+        <parameter-type>char *s</parameter-type>
+        <return-type>char *</return-type>
+        <return-value>dst</return-value>
+        <synopsis> char * gets ( char * str );</synopsis>
+        <description>gets() returns string on success, and NULL on error or when end of
+            file occurs while no characters have been read.</description>
+        <bug>Never use gets(). Because it is impossible to tell without knowing the data in advance
+            how many characters gets() will read, and because gets() will continue to store characters
+            past the end of the buffer, it is extremely dangerous to use. It has been used to break
+            computer security. Use fgets() instead.</bug>
+        <info>(deprecated) reads a line from stdin into the buffer pointed to by s until either
+            a terminating newline or EOF, which it replaces with a null byte (aq0aq).
+            No check for buffer overrun is performed. </info>
+    </source>
+    <source>
+        <function-name>getc</function-name>
+        <parameter-number>1</parameter-number>
+        <parameter-order>src</parameter-order>
+        <parameter-type>FILE *</parameter-type>
+        <return-type>int</return-type>
+        <return-value>dst</return-value>
+        <synopsis>int getc ( FILE * stream );</synopsis>
+        <description>reads the next character from a file, and return the character read as an unsigned char cast
+            to an int or EOF on end of file or error.</description>
+    </source>
+    <source>
+        <function-name>getc</function-name>
+        <parameter-number>2</parameter-number>
+        <parameter-order>dst,  src</parameter-order>
+        <parameter-type>int, FILE *</parameter-type>
+        <return-type>int</return-type>
+        <return-value>dst</return-value>
+        <synopsis>int ungetc(int c, FILE *stream);</synopsis>
+        <description> pushes character back to stream, cast to unsigned char</description>
+    </source>
+    <source>
+        <function-name>fgetc</function-name>
+        <parameter-number>1</parameter-number>
+        <parameter-order>src</parameter-order>
+        <parameter-type>FILE * </parameter-type>
+        <return-type>int</return-type>
+        <return-value>dst</return-value>
+        <synopsis>int fgetc(FILE *stream)</synopsis>
+        <description>fgetc() returns the character read as an unsigned char cast
+            to an int or EOF on end of file or error.</description>
+    </source>
+    <source>
+        <function-name>fgets</function-name>
+        <parameter-number>3</parameter-number>
+        <parameter-order>dst,len_src,src</parameter-order>
+        <parameter-type>char *, int, FILE *</parameter-type>
+        <return-type>char *</return-type>
+        <return-value>dst</return-value>
+        <return-value>dst</return-value>
+        <synopsis>char *fgets(char *str, int n, FILE *stream)</synopsis>
+    <description>  fgets() Reads characters from stream and stores them as a C string into str
+        until (n-1) characters have been read or either a newline or the end-of-file
+        is reached, whichever happens first. </description>
+</source>
+<source>
+    <function-name>getchar</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>void</parameter-type>
+    <return-type>int</return-type>
+    <return-value>dst</return-value>
+    <synopsis>int getchar ( void );</synopsis>
+    <description> getchar() return the character read as an unsigned
+        char cast to an int or EOF on end of file or error.</description>
+</source>
+
+<source>
+    <function-name>opendir</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>str</parameter-order>
+    <parameter-type>const char * </parameter-type>
+    <return-type> DIR *</return-type>
+    <return-value> The opendir() and fdopendir() functions return a pointer to the
+        directory stream. On error, NULL is returned, and errno is set
+        appropriately.</return-value>
+    <synopsis>DIR *opendir(const char *name);</synopsis>
+    <description>opens a directory stream</description>
+</source>
+<source>
+    <function-name>fdopendir</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>num</parameter-order>
+    <parameter-type>int</parameter-type>
+    <return-type> DIR *</return-type>
+    <return-value> The opendir() and fdopendir() functions return a pointer to the
+        directory stream. On error, NULL is returned, and errno is set
+        appropriately.</return-value>
+    <synopsis> DIR *fdopendir(int fd);</synopsis>
+    <description>opens a directory stream</description>
+</source>
+<source>
+    <function-name>getopt</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>num,src,str</parameter-order>
+    <parameter-type>int, char * const , const char * </parameter-type>
+    <return-type>int </return-type>
+    <return-value></return-value>
+    <synopsis> int getopt(int argc, char * const argv[], const char *optstring);</synopsis>
+    <description>Parse command-line options. If an option was successfully found, then getopt() returns the option character.
+        If all command-line options have been parsed, then getopt() returns -1. If getopt() encounters
+        an option character that was not in optstring, then '?' is returned. If getopt() encounters an
+        option with a missing argument, then the return value depends on the first character in optstring:
+        if it is ':', then ':' is returned; otherwise '?' is returned.
+        The getopt() function shall return the next option character specified on the command line.  </description>
+    <bug>A buffer overflow in Solaris's getopt command (found in libc)
+        allows local users to gain root privileges via a long argv[0]. </bug>
+</source>
+<source>
+    <function-name>getopt_long</function-name>
+    <parameter-number>5</parameter-number>
+    <parameter-order>num, src, str, src, inx_src [4]</parameter-order>
+    <parameter-type>int, char * const, const char *, const struct option *, int *</parameter-type>
+    <return-type>int </return-type>
+    <return-value></return-value>
+    <synopsis> int getopt_long(int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex);</synopsis>
+    <description>Parse command-line options.The getopt_long() function works like getopt() except that it also
+        accepts long options, started with two dashes.  (If the program
+        accepts only long options, then optstring should be specified as an
+        empty string (""), not NULL.)  Long option names may be abbreviated
+        if the abbreviation is unique or is an exact match for some defined
+        option.  A long option may take a parameter, of the form --arg=param
+        or --arg param. return the option character when a short option is recognized.
+        For a long option, they return val if flag is NULL, and 0 otherwise.
+        Error and -1 returns are the same as for getopt(), plus '?' for an ambiguous
+        match or an extraneous parameter.</description>
+</source>
+<source>
+    <function-name>getopt_long_only</function-name>
+    <parameter-number>5</parameter-number>
+    <parameter-order>num, src, str, src, inx_src [4]</parameter-order>
+    <parameter-type> int, char * const, const char *, const struct option *, int *</parameter-type>
+    <return-type>int </return-type>
+    <return-value>return the option character when a short option is recognized.
+        For a long option, they return val if flag is NULL, and 0 otherwise.
+        Error and -1 returns are the same as for getopt(), plus '?' for an ambiguous
+        match or an extraneous parameter.</return-value>
+    <synopsis>int getopt_long_only(int argc, char * const argv[], const char *optstring,
+        const struct option *longopts, int *longindex); </synopsis>
+    <description>Parse command-line options</description>
+</source>
+<source>
+    <function-name>fread</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, unit_src, len_src, src</parameter-order>
+    <parameter-type>void * , size_t , size_t, FILE *</parameter-type>
+    <return-type>size_t </return-type>
+    <return-value>len_src </return-value>
+    <synopsis>size_t fread ( void * ptr, size_t size, size_t count, FILE * stream ); </synopsis>
+    <description> Reads an array of count elements, each one with a size of size bytes,
+        from the stream and stores them in the block of memory specified by ptr.</description>
+</source>
+<source>
+    <function-name>fread_unlocked </function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, unit_src, len_src, src</parameter-order>
+    <parameter-type>void * , size_t , size_t, FILE *</parameter-type>
+    <return-type>size_t </return-type>
+    <return-value>len_src </return-value>
+    <synopsis>size_t fread ( void * ptr, size_t size, size_t count, FILE * stream );</synopsis>
+    <description> similar to fread() -- thread safe
+        Reads an array of count elements, each one with a size of size bytes,
+        from the stream and stores them in the block of memory specified by ptr.
+        The position indicator of the stream is advanced by the total amount of bytes read.
+        The total amount of bytes read if successful is (size*count).</description>
+</source>
+<source>
+    <function-name>gethostbyname</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>str</parameter-order>
+    <parameter-type>const char *</parameter-type>
+    <return-type>struct hostent *</return-type>
+    <description>map back and forth between host names and IP addresses.  </description>
+    <return-value>dst</return-value>
+    <synopsis>struct hostent *gethostbyname(const char *name);</synopsis>
+    <description>get network host entry, the gethostbyname() function returns a structure of type hostent for the given host name.
+        Here name is either a hostname, or an IPv4 address in standard dot notation (as for inet_addr(3)),
+        or an IPv6 address in colon (and possibly dot) notation. (See RFC 1884 for the description of IPv6 addresses.)
+        If name is an IPv4 or IPv6 address, no lookup is performed and gethostbyname() simply copies name into the h_name field
+        and its struct in_addr equivalent into the h_addr_list[0] field of the returned hostent structure.
+        If name doesn't end in a dot and the environment variable HOSTALIASES is set, the alias file pointed to by HOSTALIASES will
+        first be searched for name (see hostname(7) for the file format). The current domain
+        and its parents are searched unless name ends in a dot.  gethostbyname subroutine uses the default
+        name services ordering, that is, it queries DNS/BIND, NIS or the local /etc/hosts file for the name.
+        Returns a pointer to a resultant struct hostent on success, or NULL on error. </description>
+    <bug>gethostbyname() does not recognize components of a dotted IPv4 address string that are expressed in hexadecimal.</bug>
+    <status> deprecated </status>
+</source>
+<source>
+    <function-name>gethostbyname2</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>str,num</parameter-order>
+    <parameter-type>const char *, int </parameter-type>
+    <return-type>struct hostent *</return-type>
+    <return-value>dst</return-value>
+    <synopsis> struct hostent *gethostbyname2(const char *name, int af); </synopsis>
+    <description>Glibc2 also has a gethostbyname2() that works like gethostbyname(),
+        but permits to specify the address family to which the address must belong
+        On success, the gethostbyname2() function shall return a pointer to a hostent structure if the requested entry
+        was found, and a null pointer otherwise. On unsuccessful completion, gethostbyname2() shall set h_errno as for gethostbyname()
+    </description>
+    <status> deprecated </status>
+</source>
+<source>
+    <function-name>gethostbyname_r</function-name>
+    <parameter-number>6</parameter-number>
+    <parameter-order>str ,dst, dst, size_dst [3], dst, num</parameter-order>
+    <parameter-type>const char *,
+        struct hostent *, char *, size_t ,
+        struct hostent **, int * </parameter-type>
+    <return-type>int</return-type>
+    <return-value>he functions return 0 on success and a nonzero error number on failure. </return-value>
+    <synopsis>int gethostbyname_r(const char *name,
+        struct hostent *ret, char *buf, size_t buflen,
+        struct hostent **result, int *h_errnop);</synopsis>
+    <description>get network host entry</description>
+</source>
+<source>
+    <function-name>gethostbyname2_r</function-name>
+    <parameter-number>7</parameter-number>
+    <parameter-order>str, num ,  dst, dst, size_dst, dst, num</parameter-order>
+    <parameter-type>const char *, int , struct hostent *, char *, size_t , struct hostent **, int * </parameter-type>
+    <return-type>int </return-type>
+    <return-value>null</return-value>
+    <synopsis> int gethostbyname2_r(const char *name, int af,
+        struct hostent *ret, char *buf, size_t buflen,
+        struct hostent **result, int *h_errnop);</synopsis>
+    <description>get network host entry</description>
+</source>
+<source>
+    <function-name>gethostbyaddr</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>str, num , num</parameter-order>
+    <parameter-type>const void *, socklen_t , int</parameter-type>
+    <return-type> struct hostent *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>struct hostent *gethostbyaddr(const void *addr,
+        socklen_t len, int type); </synopsis>
+    <description>get network host entry.  gethostbyaddr() functions return the hostent structure or a NULL pointer if an
+        error occurs. On error, the h_errno variable holds an error number. When non-NULL, the return
+        value may point at static data, </description>
+</source>
+<source>
+    <function-name>gethostbyaddr_r</function-name>
+    <parameter-number>8</parameter-number>
+    <parameter-order>str, num , num, dst, dst, size_dst [5], dst, num</parameter-order>
+    <parameter-type>const void *, socklen_t , int ,
+        struct hostent *, char *, size_t ,
+        struct hostent **, int *</parameter-type>
+    <return-type> int</return-type>
+    <synopsis> int gethostbyaddr_r(const void *addr, socklen_t len, int type,
+        struct hostent *ret, char *buf, size_t buflen,
+        struct hostent **result, int *h_errnop);</synopsis>
+    <return-value>A pointer to result, or NULL if an error occurs. </return-value>
+    <description>get network host entry</description>
+</source>
+<source>
+    <function-name>gethostent</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>null</parameter-type>
+    <return-type>struct hostent * </return-type>
+    <return-value>dst</return-value>
+    <synopsis>struct hostent *gethostent(void);</synopsis>
+    <description>  POSIX requires the gethostent() call, that should return the next entry in the host data base.
+        When using DNS/BIND this does not make much sense, but it may be reasonable if the host data base is a file
+        that can be read line by line. On many systems a routine of this name reads from the file /etc/hosts.
+        It may be available only when the library was built without DNS support. The glibc version will ignore ipv6 entries.
+        This function is not reentrant, and glibc adds a reentrant version gethostent_r().
+        If gethostent succeeds, it returns a pointer to the hostent structure. Refer to netdb.h for details on the hostent structure.
+        A null pointer indicates an error occured or there were no more nework entries.
+        If the resolver and the name server are in use, gethostent returns NULL .
+    </description>
+</source>
+<source>
+    <function-name>gethostent_r</function-name>
+    <parameter-number>5</parameter-number>
+    <parameter-order>dst, dst, size_dst[2], dst, num</parameter-order>
+    <parameter-type>struct hostent *, char *, size_t , struct hostent **, int *</parameter-type>
+    <return-type>int</return-type>
+    <return-value> result will point to the result on success. In case of an error or if no entry is
+        found result will be NULL. The functions return 0 on success and a nonzero error number on failure.</return-value>
+    <synopsis> int gethostent_r( struct hostent *ret, char *buf, size_t buflen,
+        struct hostent **result, int *h_errnop);</synopsis>
+    <description>  The caller supplies a hostent structure ret which will be filled in on success,
+        and a temporary work buffer buf of size buflen. </description>
+</source>
+<source>
+    <function-name>getnameinfo</function-name>
+    <parameter-number>7</parameter-number>
+    <parameter-order>str, num, dst, size_dst[3], dst, size_dst[5] , num</parameter-order>
+    <parameter-type>const struct sockaddr *, socklen_t , char *, size_t, char *, size_t , int </parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, 0 is returned, and node and service names, if requested,
+        are filled with null-terminated </return-value>
+    <synopsis> int getnameinfo(const struct sockaddr *sa, socklen_t salen,
+        char *host, size_t hostlen,
+        char *serv, size_t servlen, int flags);</synopsis>
+    <description> address-to-name translation in protocol-independent manner.
+        On success 0 is returned, and node and service names, if requested, are filled
+        with null-terminated strings, possibly truncated to fit the specified buffer lengths.
+        On error one of the following nonzero error codes is returned</description>
+</source>
+<source>
+    <function-name>getaddrinfo</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>str, str, str, dst</parameter-order>
+    <parameter-type>const char *, const char *,
+        const struct addrinfo *, struct addrinfo ** </parameter-type>
+    <return-type>int</return-type>
+    <return-value>returns 0 if it succeeds, or one of the following nonzero error codes.</return-value>
+    <synopsis> int getaddrinfo(const char *node, const char *service,
+        const struct addrinfo *hints,
+        struct addrinfo **res);</synopsis>
+    <description> network address and service translation.Given node and service, which identify
+        an Internet host and a service, getaddrinfo() returns one or more addrinfo structures,
+        each of which contains an Internet address that can be specified in a c
+        all to bind(2) or connect(2). </description>
+</source>
+<!-- input from socket. -->
+<source>
+    <function-name>recv</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>fd, dst, len_src, num</parameter-order>
+    <parameter-type> int , void *, size_t , int </parameter-type>
+    <return-type>ssize_t </return-type>
+    <return-value>len_dst</return-value>
+    <synopsis> ssize_t recv(int sockfd, void *buf, size_t len, int flags); </synopsis>
+    <description> The recv() function shall receive a message from a connection-mode or connectionless-mode socket.
+        It is normally used with connected sockets because it does not permit the application to retrieve the source address of received data.
+        Upon successful completion, recv() shall return the length of the message in bytes.
+        If no messages are available to be received and the peer has performed an orderly shutdown,
+        recv() shall return 0. Otherwise, -1 shall be returned and errno set to indicate the error.
+        If a message is too long to fit in the supplied buffer, excess bytes may be discarded depending
+        on the type of socket the message is received from.
+    </description>
+    <info>All three routines return the length of the message on successful completion.
+        If a message is too long to fit in the supplied buffer, excess bytes may be discarded
+        depending on the type of socket the message is received from.
+        
+    </info>
+</source>
+<source>
+    <function-name>readv</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd, dst, size_dst</parameter-order>
+    <parameter-type>int, const struct iovec *, int</parameter-type>
+    <return-type>ssize_t</return-type>
+    <return-value>On success, the number of bytes read is returned (zero indicates end of file), and the file position is
+        advanced by this number. It is not an error if this number is smaller than the number of bytes requested; this may
+        happen for example because fewer bytes are actually available right now (maybe because we were close to end-of-file,
+        or because we are reading from a pipe, or from a terminal), or because read() was interrupted by a signal.
+        On error, -1 is returned, and errno is set appropriately. In this case it is left unspecified
+        whether the file position (if any) changes. </return-value>
+    <synopsis> ssize_t readv(int fildes, const struct iovec *iov, int iovcnt); </synopsis>
+    <description> The readv() function shall place the input data into the iovcnt buffers specified by the members of the iov array.
+        The readv() system call reads iovcnt buffers from the file associated with the file descriptor fd into the buffers described
+        by iov ("scatter input"). read from scatter (non-contiguous) memory locations
+  </description>
+    <bug>It is not advisable to mix calls to functions like readv() or writev(), which operate on file descriptors,
+        with the functions from the stdio library; the results will be undefined and probably not what you want.</bug>
+</source>
+<source>
+    <!-- source and sink -->
+    <function-name>read</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd, dst, size_dst</parameter-order>
+    <parameter-type>int , void *, size_t </parameter-type>
+    <return-type>ssize_t</return-type>
+    <return-value>On success, the number of bytes read is returned (zero indicates end of file),  On error, -1 is returned</return-value>
+    <synopsis>ssize_t read(int fd, void *buf, size_t count);</synopsis>
+    <description> read() attempts to read up to count bytes from file descriptor fd into the buffer starting at buf. </description>
+</source>
+<source>
+    <!-- source and sink -->
+    <function-name>pread</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>fd, dst, size_dst, src_inx</parameter-order>
+    <parameter-type>int , void *, size_t,off_t </parameter-type>
+    <return-type>ssize_t</return-type>
+    <synopsis>ssize_t pread(int fildes, void *buf, size_t nbyte, off_t offset);
+    </synopsis>
+</source>
+<source>
+    <!-- source and sink -->
+    <function-name>preadv2</function-name>
+    <parameter-number>5</parameter-number>
+    <parameter-order>fd, dst, size_dst, src_inx, num</parameter-order>
+    <parameter-type>int, const struct iovec *, int ,
+        off_t , int </parameter-type>
+    <return-type>ssize_t</return-type>
+    <synopsis> ssize_t preadv2(int fd, const struct iovec *iov, int iovcnt, off_t offset, int flags); </synopsis>
+    <description> read  data into multiple buffers </description>
+</source>
+<source>
+    <!-- source and sink -->
+    <function-name>recvfrom</function-name>
+    <parameter-number>6</parameter-number>
+    <parameter-order>fd, dst, size_dst, num, dst, size_dst</parameter-order>
+    <parameter-type>int , void *restrict , size_t , int , struct sockaddr *restrict , socklen_t *restrict </parameter-type>
+    <return-type>ssize_t </return-type>
+    <return-value>size_dst [3]</return-value>
+    <synopsis> ssize_t recvfrom(int socket, void *restrict buffer, size_t length,
+        int flags, struct sockaddr *restrict address,
+        socklen_t *restrict address_len); </synopsis>
+    <description> receive a message from a socket
+        Upon successful completion, recvfrom() shall return the length of the message in bytes.
+        If no messages are available to be received and the peer has performed an orderly shutdown, recvfrom() shall return 0.
+        Otherwise, the function shall return -1 and set errno to indicate the error.
+        Upon return, addrlen is updated to contain the actual size of the source address.  The
+        returned address is truncated if the buffer provided is too small; in
+        this case, addrlen will return a value greater than was supplied to
+        the call.  For stream-based sockets, such as SOCK_STREAM, message boundaries shall be ignored.
+        In this case, data shall be returned to the user as soon as it becomes available, and no data shall be discarded.
+    </description>
+</source>
+<source>
+    <!-- source and sink -->
+    <function-name>recvmsg</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd, dst, num</parameter-order>
+    <parameter-type>int, struct msghdr *, int </parameter-type>
+    <return-type>ssize_t </return-type>
+    <return-value>size_dst</return-value>
+    <synopsis> ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);   </synopsis>
+    <info> src here include struct that have everything , buffer and size, etc</info>
+    <description> receive a message from a socket</description>
+    <struct>struct msghdr {
+        void         *msg_name;       /* optional address */
+        socklen_t     msg_namelen;    /* size of address */
+        struct iovec *msg_iov;        /* scatter/gather array */
+        size_t        msg_iovlen;     /* # elements in msg_iov */
+        void         *msg_control;    /* ancillary data, see below */
+        size_t        msg_controllen; /* ancillary data buffer len */
+        int           msg_flags;      /* flags on received message */
+        };</struct>
+</source>
+<source>
+    <function-name>getenv</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>str</parameter-order>
+    <parameter-type>const char * </parameter-type>
+    <return-type>char * </return-type>
+    <!-- the source come from the env and stored in the ret -->
+    <synopsis> char *getenv(const char *name); </synopsis>
+    <description> get an environment variable
+        Upon successful completion, getenv() shall return a pointer to a string containing
+        the value for the specified name. If the specified name cannot be found in the environment of
+        the calling process, a null pointer shall be returned.</description>
+</source>
+<source>
+    <function-name>secure_getenv</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>str</parameter-order>
+    <parameter-type>const char * </parameter-type>
+    <return-type>char * </return-type>
+    <!-- the source come from the env and stored in the ret -->
+    <return-value>dst</return-value>
+    <synopsis> char *secure_getenv(const char *name);</synopsis>
+    <description> get an environment variable
+        The GNU-specific secure_getenv() function is just like getenv() except that it returns NULL in cases where "secure execution" is required.</description>
+</source>
+<source>
+    <function-name>getline</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst , dst  , fd</parameter-order>
+    <parameter-type>char **, size_t *, FILE *</parameter-type>
+    <return-type>ssize_t </return-type>null
+    <!-- the source come from the env and stored in the ret -->
+    <return-value> len_dst  </return-value>
+    <synopsis> ssize_t getline(char **lineptr, size_t *n, FILE *stream);</synopsis>
+    <description>delimited string input
+       If the buffer is not large enough to hold the line, getline() resizes it
+        with realloc(3), updating *lineptr and *n as necessary.
+    </description>
+</source>
+<source>
+    <function-name>getdelim</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, dst, num, fd</parameter-order>
+    <parameter-type>char **, size_t *, int, FILE *</parameter-type>
+    <return-type>ssize_t </return-type>null
+    <!-- the source come from the env and stored in the ret -->
+    <return-value> len_dst  </return-value>
+    <synopsis> ssize_t getdelim(char **lineptr, size_t *n, int delim, FILE *stream);</synopsis>
+    <description>delimited string input</description>
+</source>
+<source>
+    <function-name>getlogin</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>null</parameter-type>
+    <return-type>char * </return-type>
+    <return-value> dst</return-value>
+    <synopsis>char *getlogin(void); </synopsis>
+    <description>getlogin() returns a pointer to a string containing the name of the user logged
+        in on the controlling terminal of the process, or a NULL pointer if this information
+        cannot be determined.
+        The string is statically allocated and might be overwritten on subsequent
+        calls to this function or to cuserid(). The results of this call are easy
+        to forge. Also it could have a very large buffer that os not validated getlogin()
+        returns a pointer to the username when successful, and NULL on failure. </description>
+    <!-- The getlogin() function is supposed to return a string containing the name of the
+     user currently logged in at the terminal, but an attacker can cause getlogin()
+     to return the name of any user logged in to the machine. -->
+</source>
+<source>
+    <function-name>getlogin_r</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, size_dst</parameter-order>null
+    <parameter-type>char *, size_t </parameter-type>
+    <return-type>int </return-type>
+    <return-value>null</return-value>
+    <synopsis>int getlogin_r(char *buf, size_t bufsize);</synopsis>
+    <description>getlogin_r() returns this same username in the array buf of size bufsize.
+        The results of this call are easy to forge. Also it could have a
+        very large buffer that os not validated getlogin_r() returns 0 when successful, and nonzero on failure.</description>
+ </source>
+<source>
+    <function-name>cuserid</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>dst</parameter-order>
+    <parameter-type>char *</parameter-type>
+    <return-type>char * </return-type>
+    <return-value>dst</return-value>
+    <synopsis> char *cuserid(char *string);</synopsis>
+    <info> This may be forgable.</info>
+    <description>cuserid() returns a pointer to a string containing a username associated with
+        the effective user ID of the process. If string is not a NULL pointer, it should be an array
+        that can hold at least L_cuserid characters; the string is returned in this array.
+        Otherwise, a pointer to a string in a static area is returned. This string is statically
+        allocated and might be overwritten on subsequent
+        calls to this function or to getlogin().</description>
+    <bug>Nobody knows precisely what cuserid() does; avoid it in portable programs.
+        Or avoid it altogether: use getpwuid(geteuid()) instead, if that is what you meant.
+        Do not use cuserid().https://linux.die.net/man/3/cuserid</bug>
+</source>
+<source>
+    <function-name>ttyname</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>fd</parameter-order>
+    <parameter-type> int</parameter-type>
+    <return-type> char *</return-type>
+    <return-value>dst </return-value>
+    <synopsis>  char *ttyname(int fd);</synopsis>
+    <description>  return name of a terminal The results are easy for an attacker
+        to forge, and not reliable. </description>
+</source>
+<source>
+    <function-name>ttyname_r</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd,dst,size_dst</parameter-order>
+    <parameter-type>int , char *, size_t </parameter-type>
+    <return-type> int</return-type>
+    <return-value>dst </return-value>
+    <synopsis>   int ttyname_r(int fd, char *buf, size_t buflen);</synopsis>
+    <description> return name of a terminal The results are easy for an attacker
+        to forge, and not reliable. </description>
+</source>
+<source>
+    <function-name>readdir</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>str</parameter-order>
+    <parameter-type> DIR *</parameter-type>
+    <return-type>struct dirent * </return-type>
+    <return-value>dst </return-value>
+    <synopsis> struct dirent *readdir(DIR *dirp);</synopsis>
+    <description>On success, readdir() returns a pointer to a dirent structure. (This structure may be statically allocated;
+        do not attempt to free(3) it.)If the end of the directory stream is reached, NULL is returned and errno is not changed.
+        If an error occurs, NULL is returned and errno is set appropriately </description>
+</source>
+<source>
+    <function-name>getdirentries</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>fd, dst, len_dst, inx_dst</parameter-order>
+    <parameter-type>int , char *buf, size_t  , off_t *</parameter-type>
+    <return-type>ssize_t</return-type>
+    <return-value>returns the number of bytes read or zero </return-value>
+    <synopsis>ssize_t getdirentries(int fd, char *buf, size_t nbytes , off_t *basep);</synopsis>
+    <description>get  directory  entries in a filesystem-independent format </description>
+</source>
+<source>
+    <function-name>readdir_r</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>str , dst, dst</parameter-order>
+    <parameter-type>DIR *, struct dirent *, struct dirent **</parameter-type>
+    <return-type>int</return-type>
+    <return-value>The readdir_r() function returns 0 on success. On error, it returns a positive error number</return-value>
+    <synopsis> int readdir_r(DIR *dirp, struct dirent *entry, struct dirent **result);</synopsis>
+    <description>On success, readdir() returns a pointer to a dirent structure.
+        (This structure may be statically allocated; do not attempt to free(3) it.)
+        If the end of the directory stream is reached, NULL is returned and errno is not changed.
+        If an error occurs, NULL is returned and errno is set appropriately.</description>
+</source>
+<source>
+    <function-name>readlink</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>src,dst,size_dst</parameter-order>
+    <parameter-type>const char *, char *, size_t </parameter-type>
+    <return-type> ssize_t</return-type>
+    <return-value>len_dst</return-value>
+    <synopsis>ssize_t readlink(const char *path, char *buf, size_t bufsiz);</synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name>readlinkat</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>num,src,dst,size_dst, </parameter-order>
+    <parameter-type>const char *, char *, size_t </parameter-type>
+    <return-type> ssize_t</return-type>
+    <return-value>len_dst</return-value>
+    <synopsis>ssize_t readlinkat(int dirfd, const char *pathname,
+        char *buf, size_t bufsiz);</synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name>catgets</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>str,num,num,dst</parameter-order>
+    <parameter-type>nl_catd, int , int ,const char * </parameter-type>
+    <return-type> char *</return-type>
+    <return-value> dst</return-value>
+    <synopsis> char *catgets(nl_catd catalog, int set_number, int message_number,
+        const char *message);</synopsis>
+    <description>
+        get message from a message catalog
+        Environment variables are highly untrustable input.
+        They may be of any length, and contain any data. Do not make any
+        assumptions regarding content or length. If at all possible avoid
+        using them, and if it is necessary, sanitize them and truncate them
+        to a reasonable length. catgets() can utilize the NLSPATH environment variable.</description>
+</source>
+<source>
+    <function-name>get_current_dir_name</function-name>
+    <!--  this accepts input from untrusted source, it does boundry check! -->
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type> void</parameter-type>
+    <return-type> char *</return-type>
+    <return-value>dst </return-value>
+    <synopsis>char *get_current_dir_name(void);
+    </synopsis>
+    <description>get_current_dir_name() will malloc(3) an array big enough to hold the
+        absolute pathname of the current working directory. </description>
+</source>
+<source>
+    <function-name>getwd</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>dst</parameter-order>
+    <parameter-type>char *</parameter-type>
+    <return-type> char *</return-type>
+    <return-value> dst</return-value>
+    <synopsis> char *getwd(char *path_name);</synopsis>
+    <description>getwd() does not malloc(3) any memory. The buf argument should be a pointer to an array at least PATH_MAX bytes long.
+        If the length of the absolute pathname of the current working directory, including the terminating null byte,
+        exceeds PATH_MAX bytes, NULL is returned, and errno is set  </description>
+    <info>    use of getwd() is deprecated. </info>
+</source>
+<source>
+    <function-name>getcwd</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, size_dst</parameter-order>
+    <parameter-type> char *, size_t</parameter-type>
+    <return-type> char *</return-type>
+    <return-value>dst </return-value>
+    <synopsis>char *getcwd(char *buf, size_t size); </synopsis>
+    <description>getcwd() allocates the buffer dynamically using malloc(3) if buf is NULL.
+        In this case, the allocated buffer has the length size unless size is zero,
+        when buf is allocated as big as necessary. The caller should free(3) the returned buffer.
+    </description>
+</source>
+<source>
+    <function-name>scandir</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>str,dst,fun,fun</parameter-order>
+    <parameter-type> const char *, struct dirent ***, int (*filter)(const struct dirent *),
+        int (*compar)(const struct dirent **, const struct dirent **)</parameter-type>
+    <return-type>int</return-type>
+    <return-value> len_dst</return-value>
+    <synopsis>int scandir(const char *dirp, struct dirent ***namelist,
+        int (*filter)(const struct dirent *),
+        int (*compar)(const struct dirent **, const struct dirent **));
+    </synopsis>
+    <description> Upon successful completion, the scandir() function shall return the number of entries in
+        the array and a pointer to the array through the parameter namelist.
+        Otherwise, the scandir() function shall return -1. </description>
+    <description></description>
+</source>
+<source>
+    <function-name>scandir64</function-name>
+    <!--  this accepts input from untrusted source, it does boundry check! -->
+    <parameter-number>4</parameter-number>
+    <parameter-order>str,dst,fun,fun</parameter-order>
+    <parameter-type></parameter-type>
+    <return-type>len_dst </return-type>
+    <return-value>int </return-value>
+    <synopsis>int scandir64(const char * dir, const struct dirent64 ** namelist,
+        int (*sel) (const struct dirent64 *), int (*compar) (const struct dirent64 **, const struct dirent64 **));  </synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name>fpathconf</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>num,num</parameter-order>
+    <parameter-type>int,int </parameter-type>
+    <return-type>long </return-type>
+    <return-value>num</return-value>
+    <synopsis> long fpathconf(int fd, int name);</synopsis>
+    <description> get configuration values for files, it determines the current value of a
+        configurable limit or option (variable) that is associated with a file or directory</description>
+</source>
+<source>
+    <function-name>pathconf</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>str,num</parameter-order>
+    <parameter-type>const char *, int</parameter-type>
+    <return-type>long</return-type>
+    <return-value>num</return-value>
+     <synopsis>long pathconf(const char *path, int name);</synopsis>
+    <description> get configuration values for files, it determines the current value of a configurable
+        limit or option (variable) that is associated with a file or directory</description>
+</source>
+<source>
+    <function-name>getpass</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>str</parameter-order>
+    <parameter-type>const char *</parameter-type>
+    <return-type> char *</return-type>
+    <return-value> dst</return-value>
+    <synopsis> char *getpass( const char *prompt);</synopsis>
+    <description>The getpass() function opens /dev/tty (the controlling terminal of the process),
+        outputs the string prompt, turns off echoing, reads one line (the "password"),
+        restores the terminal state and closes /dev/tty again.
+      The function getpass() returns a pointer to a static buffer containing (the first PASS_MAX bytes of)
+      the password without the trailing newline, terminated by a null byte ('0').
+      This buffer may be overwritten by a following call.
+      On error, the terminal state is restored, errno is set appropriately, and NULL is returned.
+    </description>
+    <info>obsolete</info>
+</source>
+<source>
+    <function-name> readv</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd, dst, size_dst</parameter-order>
+    <parameter-type>int ,const struct iovec *,int</parameter-type>
+    <return-type>  ssize_t</return-type>
+    <return-value> len_dst </return-value>
+    <synopsis>ssize_t readv(int fd, const struct iovec *iov, int iovcnt);</synopsis>
+    <description>The readv() system call reads iovcnt buffers from the file associated with the
+        file descriptor fd into the buffers described by iov.The readv() system call works just
+        like read(2) except that multiple buffers are filledscatter input". </description>
+    <info>struct iovec {
+        void  *iov_base;    /* Starting address */
+        size_t iov_len;     /* Number of bytes to transfer */
+        }
+    </info>
+</source>
+<source>
+    <function-name> preadv</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>src, dst, size_dst, inx_src</parameter-order>
+    <parameter-type>int ,const struct iovec *,int, off_t</parameter-type>
+    <return-type>ssize_t</return-type>
+    <return-value> len_dst </return-value>
+    <synopsis>ssize_t preadv(int fd, const struct iovec *iov, int iovcnt,
+        off_t offset);</synopsis>
+    <description>The preadv() system call combines the functionality of readv() and pread(2).
+        It performs the same task as readv(), but adds a fourth argument, offset, which specifies
+        the file offset at which the input operation is to be performed.</description>
+</source>
+<source>
+    <function-name> pread</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>src, dst, len_src, inx_src</parameter-order>
+    <parameter-type>int, const void *, size_t , off_t </parameter-type>
+    <return-type>  ssize_t</return-type>
+    <return-value> len_dst </return-value>
+    <synopsis>ssize_t pread(int fd, void *buf, size_t count, off_t offset)</synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name> ptsname_r</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order> fd, dst, size_dst</parameter-order>
+    <parameter-type> int , char *, size_t </parameter-type>
+    <return-type> int </return-type>
+    <return-value>null</return-value>
+    <synopsis> int ptsname_r(int fd, char *buf, size_t buflen); </synopsis>
+    <description>get the name of the slave pseudoterminal
+        The buflen argument specifies the number of bytes available in buf.
+    </description>
+</source>
+<source>
+    <function-name> ptsname</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order> fd </parameter-order>
+    <parameter-type>  int  </parameter-type>
+    <return-type> char * </return-type>
+    <return-value> dst </return-value>
+    <synopsis> char *ptsname(int fd);   </synopsis>
+    <description>The ptsname() function returns the name of the slave pseudoterminal device corresponding to the master referred to by fd.
+    </description>
+</source>
+<source>
+    <function-name>getw</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order> src</parameter-order>
+    <parameter-type> FILE *</parameter-type>
+    <return-type> int </return-type>
+    <return-value> src[size] </return-value>
+    <synopsis>int getw(FILE *stream);</synopsis>
+    <description> reads the next word from the stream.
+    </description>
+</source>
+<source>
+    <function-name> getsockname</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd, dst, size_dst</parameter-order>
+    <parameter-type>int , struct sockaddr *, socklen_t * </parameter-type>
+    <return-type> int  </return-type>
+    <return-value>"" </return-value>
+    <synopsis>int getsockname(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
+    </synopsis>
+    <description>getsockname() returns the current address to which the socket sockfd is bound,
+        in the buffer pointed to by addr.  The addrlen argument
+        should be initialized to indicate the amount of space (in bytes)
+        pointed to by addr.  On return it contains the actual size of the
+        socket address.The returned address is truncated if the buffer provided is too
+        small; in this case, addrlen will return a value greater than was
+        supplied to the call.  </description>
+</source>
+<source>
+    <function-name> getpeername</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>fd, dst, size_dst </parameter-order>
+    <parameter-type>int , struct sockaddr *, socklen_t * </parameter-type>
+    <return-type> int  </return-type>
+    <return-value>On success, zero is returned.  On error, -1 is returned </return-value>
+    <synopsis> int getpeername(int sockfd, struct sockaddr *addr, socklen_t *addrlen);</synopsis>
+    <description> getpeername() returns the address of the peer connected to the socket
+        sockfd, in the buffer pointed to by addr.  The addrlen argument
+        should be initialized to indicate the amount of space pointed to by
+        addr.  On return it contains the actual size of the name returned (in
+        bytes).  The name is truncated if the buffer provided is too small.
+        The returned address is truncated if the buffer provided is too
+        small; in this case, addrlen will return a value greater than was
+        supplied to the call. </description>
+</source>
+<source>
+    <function-name> textdomain   </function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>dst</parameter-order>
+    <parameter-type>const char *  </parameter-type>
+    <return-type> char *   </return-type>
+    <return-value> dst </return-value>
+    <synopsis> char * textdomain (const char * domainname);</synopsis>
+    <description> The textdomain function sets or retrieves the current message domain.
+        A message domain is a set of translatable msgid messages. Usually, every software package
+        has its own message domain. The domain name is used to determine the message catalog
+        where a translation is looked up; it must be a non-empty string.  </description>
+</source>
+<source>
+    <function-name> ctermid</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>dst</parameter-order>
+    <parameter-type>char *</parameter-type>
+    <return-type> char *  </return-type>
+    <return-value> dst </return-value>
+    <synopsis> char *ctermid(char *s); </synopsis>
+    <description> read from a file descriptor at a given offset  </description>
+</source>
+<source>
+    <function-name> aio_read   </function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>dst</parameter-order>
+    <parameter-type>struct aiocb *</parameter-type>
+    <return-type>int</return-type>
+    <return-value> On success, 0 is returned.  On error, the request is
+        not enqueued, -1  is returned</return-value>
+    <synopsis> int aio_read(struct aiocb *aiocbp); </synopsis>
+    <description> asynchronous read  </description>
+</source>
+<source>
+    <function-name> aio_read64   </function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>dst</parameter-order>
+    <parameter-type>struct aiocb *</parameter-type>
+    <return-type>int</return-type>
+    <return-value> On success, 0 is returned.  On error, the
+        request is not enqueued, -1  is returned</return-value>
+    <synopsis>  int aio_read64( struct aiocb64 *  aiocbptr );  </synopsis>
+    <description>
+        asynchronous read
+        
+    </description>
+</source>
+<source>
+    <function-name> getutxline </function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>const struct utmpx *</parameter-type >
+    <parameter-order>str</parameter-order>
+    <return-type> struct utmpx *</return-type>
+    <return-value> dst   </return-value>
+    <synopsis>  struct utmpx *  getutxline(const struct utmpx *line);  </synopsis>
+    <description>The getutxline() function searches for the next entry in the database
+        whose ut_type has a value of USER_PROCESS or LOGIN_PROCESS and whose
+        ut_line is equal to the same field in line.</description>
+</source>
+<source>
+    <function-name>getutxuser</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>const struct utmpx *</parameter-type>
+    <parameter-order>str</parameter-order>
+    <return-type>struct utmpx *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>  struct utmpx *getutxline(const struct utmpx *line); </synopsis>
+    <description>  The getutxuser() function searches for the next entry in the database whose
+        ut_type has a value of USER_PROCESS and whose ut_user is equal to user.</description>
+</source>
+<source>
+    <function-name>getutxent</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>void</parameter-type>
+    <return-type>struct utmpx *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>   struct utmpx *getutxent(void); </synopsis>
+    <description> read the next entry from the user accounting database.</description>
+</source>
+<source>
+    <function-name>getutxid</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>const struct utmpx *</parameter-type>
+    <parameter-order>str</parameter-order>
+    <return-type>struct utmpx *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>  struct utmpx * getutxid(const struct utmpx *id); </synopsis>
+    <description> The getutxid() function searches for the next entry in the database of which the behaviour
+        is based on the ut_type field of id. If ut_type has a value of BOOT_TIME, SHUTDOWN_TIME,
+        OLD_TIME or NEW_TIME, it will return the next entry whose ut_type has an equal value.
+        If ut_type has a value of USER_PROCESS, INIT_PROCESS, LOGIN_PROCESS or DEAD_PROCESS,
+        it will return the next entry whose ut_type has one of the previously mentioned values and whose ut_id is equal.
+    </description>
+</source>
+<source>
+    <function-name>getutent</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-type>void</parameter-type>
+    <parameter-order>null</parameter-order>
+    <return-type> struct utmp *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>struct utmp *getutent(void); </synopsis>
+    <description> getutent() reads a line from the current file position in the utmp
+        file.  It returns a pointer to a structure containing the fields of
+        the line.  The definition of this structure is shown in utmp(5).
+    </description>
+</source>
+<source>
+    <function-name>getutent_r</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-type>utmp *, struct utmp **</parameter-type>
+    <parameter-order>dst,dst</parameter-order>
+    <return-type> int</return-type>
+    <return-value>On success, they return 0</return-value>
+    <synopsis>  int getutent_r(struct utmp *ubuf, struct utmp **ubufp); </synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name>getutline</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>const struct utmp *</parameter-type>
+    <parameter-order>str</parameter-order>
+    <return-type> struct utmp *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>      struct utmp *getutline(const struct utmp *ut); </synopsis>
+    <description> getutline() searches forward from the current file position in the
+        utmp file.  It scans entries whose ut_type is USER_PROCESS or
+        LOGIN_PROCESS and returns the first one whose ut_line field matches
+        ut->ut_line.
+    </description>
+</source>
+<source>
+    <function-name>getutline_r</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-type>utmp *,  struct utmp * , struct utmp **</parameter-type>
+    <parameter-order>str, dst,dst</parameter-order>
+    <return-type> int</return-type>
+    <return-value>On success they return 0. On error these functions return -1. </return-value>
+    <synopsis>int getutline_r(struct utmp *ut, struct utmp *ubuf, struct utmp **ubufp); </synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name>getutid</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>const struct utmp *</parameter-type>
+    <parameter-order>str</parameter-order>
+    <return-type> struct utmp *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>  struct utmp *getutid(const struct utmp *ut);  </synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name>getutid_r</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-type>utmp *,  struct utmp * , struct utmp **</parameter-type>
+    <parameter-order>str, dst,dst</parameter-order>
+    <return-type> int</return-type>
+    <return-value>On success, they return 0</return-value>
+    <synopsis>int getutid_r(struct utmp *ut, struct utmp *ubuf, struct utmp **ubufp);  </synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name>getservbyname</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-type>const char *, const char *</parameter-type>
+    <parameter-order>str, str</parameter-order>
+    <return-type> struct servent *</return-type>
+    <return-value>dst</return-value>
+    <synopsis> struct servent *getservbyname(const char *name, const char *proto); </synopsis>
+    <description>The getservbyname() function returns a servent structure for the entry
+        from the database that matches the service name using protocol proto.
+        If proto is NULL, any protocol will be matched. A connection is opened to the database if necessary.
+    </description>
+</source>
+<source>
+    <function-name>getservbyport</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-type>const char *, const char *</parameter-type>
+    <parameter-order>str, str</parameter-order>
+    <return-type> struct servent *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>struct servent *getservbyport(int port, const char *proto);</synopsis>
+    <description> The getservbyport() function returns a servent structure for the entry from
+        the database that matches the port port (given in network byte order) using protocol proto.
+        If proto is NULL, any protocol will be matched. A connection is opened to the database if necessary.
+    </description>
+</source>
+<source>
+    <function-name>getservent</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-type>void</parameter-type>
+    <parameter-order>null</parameter-order>
+    <return-type> struct servent *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>struct servent *getservent(void); </synopsis>
+    <description> The getservent() function reads the next entry from the services database
+       and returns a servent structure containing the broken-out fields from the entry.
+        A connection is opened to the database if necessary.
+    </description>
+</source>
+<source>
+    <function-name>getprotoent</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-type>void</parameter-type>
+    <parameter-order>null</parameter-order>
+    <return-type> struct protoent *</return-type>
+    <return-value>dst</return-value>
+    <synopsis> struct protoent *getprotoent(void); </synopsis>
+    <description>  get protocol entry. The getprotoent() function reads the next entry from the protocols
+        database and returns a protoent structure containing the broken-out fields from the entry.
+        A connection is opened to the database if necessary.</description>
+</source>
+<source>
+    <function-name>getprotobyname</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>const char *</parameter-type>
+    <parameter-order>str</parameter-order>
+    <return-type> struct protoent *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>struct protoent *getprotobyname(const char *name);      </synopsis>
+    <description> The getprotobyname() function returns a protoent structure for the
+        entry from the database that matches the protocol name name.  A
+        connection is opened to the database if necessary.
+    </description>
+</source>
+<source>
+    <function-name>getprotobynumber</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>int</parameter-type>
+    <parameter-order>num</parameter-order>
+    <return-type> struct protoent *</return-type>
+    <return-value>dst</return-value>
+    <synopsis> struct protoent *getprotobynumber(int proto); </synopsis>
+    <description> The getprotobynumber() function returns a protoent structure for the
+        entry from the database that matches the protocol number number.  A
+        connection is opened to the database if necessary.
+    </description>
+</source>
+<source>
+    <function-name>gethostname</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order> dst, size_dst</parameter-order>
+    <parameter-type> char *, size_t </parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, zero is returned.  On error, -1 is returned, </return-value>
+    <synopsis> int gethostname(char *name, size_t len);</synopsis>
+    <description> gethostname() returns the null-terminated hostname in the character
+        array name, which has a length of len bytes.  If the null-terminated
+        hostname is too large to fit, then the name is truncated, and no
+        error is returned (but see NOTES below).  POSIX.1 says that if such
+        truncation occurs, then it is unspecified whether the returned buffer
+        includes a terminating null byte.
+        Having performed the copy, the function then checks if
+        the length of the nodename was greater than or equal to len, and if
+        it is, then the function returns -1 with errno set to ENAMETOOLONG;
+        in this case, a terminating null byte is not included in the returned
+        name. </description>
+</source>
+<source>
+    <function-name>getgrnam</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>const char *</parameter-type>
+    <parameter-order>str</parameter-order>
+    <return-type> struct group *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>  struct group *getgrnam(const char *name); </synopsis>
+    <description> The getgrnam() function returns a pointer to a structure containing
+        the broken-out fields of the record in the group database (e.g., the
+        local group file /etc/group, NIS, and LDAP) that matches the group
+        name name.  </description>
+</source>
+<source>
+    <function-name>getgrnam_r</function-name>
+    <parameter-number>5</parameter-number>
+    <parameter-type>const char *, struct group *,
+        char *, size_t , struct group **</parameter-type>
+    <parameter-order>str, dst,dst,size_dst [3], dst </parameter-order>
+    <return-type>int</return-type>
+    <return-value>On success,  return zero and on error return 0</return-value>
+    <synopsis> int getgrnam_r(const char *name, struct group *grp,
+        char *buf, size_t buflen, struct group **result);
+    </synopsis>
+    <description> get group file entry  </description>
+</source>
+<source>
+    <function-name>getgrouplist</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-type>const char *, gid_t , gid_t *, int *</parameter-type>
+    <parameter-order>str, num,dst,len_dst </parameter-order>
+    <return-type>int</return-type>
+    <return-value>If the number of groups of which user is a member is less than or
+        equal to *ngroups, then the value *ngroups is returned.
+        If the user is a member of more than *ngroups groups, then
+        getgrouplist() returns -1. </return-value>
+    <synopsis> int getgrouplist(const char *user, gid_t group,  gid_t *groups, int *ngroups); </synopsis>
+    <description> getgrouplist - get list of groups to which a user belongs
+        The getgrouplist() function scans the group database (see group(5))
+        to obtain the list of groups that user belongs to.  Up to *ngroups of
+        these groups are returned in the array groups.
+        The ngroups argument is a value-result argument: on return it always
+        contains the number of groups found for user, including group; this
+        value may be greater than the number of groups stored in groups.
+    </description>
+</source>
+<source>
+    <function-name>getgroups</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-type>int , gid_t []</parameter-type>
+    <parameter-order>size_dst , dst </parameter-order>
+    <return-type>int</return-type>
+    <return-value> On success, getgroups() returns the number of supplementary group
+        IDs.  On error, -1</return-value>
+    <synopsis> int getgroups(int size, gid_t list[]);</synopsis>
+    <description> getgroups() returns the supplementary group IDs of the calling
+        process in list.  The argument size should be set to the maximum
+        number of items that can be stored in the buffer pointed to by list.
+        If the calling process is a member of more than size supplementary
+        groups, then an error results.  It is unspecified whether the
+        effective group ID of the calling process is included in the returned
+        list.
+    </description>
+</source>
+<source>
+    <function-name>getgrent</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-type>void</parameter-type>
+    <parameter-order>null</parameter-order>
+    <return-type>struct group *</return-type>
+    <return-value>dst</return-value>
+  <synopsis>  struct group *getgrent(void);</synopsis>
+<description> The getgrent() function returns a pointer to a structure containing
+    the broken-out fields of a record in the group database (e.g., the
+    local group file /etc/group, NIS, and LDAP).  The first time
+    getgrent() is called, it returns the first entry; thereafter, it
+    returns successive entries. </description>
+</source>
+<source>
+    <function-name>fgetgrent</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>FILE *</parameter-type>
+    <parameter-order>fd</parameter-order>
+    <return-type>struct group *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>   struct group *fgetgrent(FILE *stream);</synopsis>
+    <description> The fgetgrent() function returns a pointer to a structure containing
+        the group information from the file referred to by stream.  The first
+        time it is called it returns the first entry; thereafter, it returns
+        successive entries.  The file referred to by stream must have the
+        same format as /etc/group .
+    </description>
+</source>
+<source>
+    <function-name>getgrent_r</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-type>struct group *, char *,
+        size_t , struct group **</parameter-type>
+    <parameter-order> dst, dst,size_dst[2], dst</parameter-order>
+    <return-type>int</return-type>
+    <return-value>On success, these functions return 0</return-value>
+    <synopsis> int getgrent_r(struct group *gbuf, char *buf, size_t buflen, struct group **gbufp); </synopsis>
+    <description> The nonreentrant functions return a pointer to static storage, where
+        this static storage contains further pointers to group name, password
+        and members.  The reentrant functions described here return all of
+        that in caller-provided buffers.  First of all there is the buffer
+        gbuf that can hold a struct group.  And next the buffer buf of size
+        buflen that can hold additional strings.  The result of these func‐
+        tions, the struct group read from the stream, is stored in the pro‐
+        vided buffer *gbuf, and a pointer to this struct group is returned in
+        *gbufp.</description>
+</source>
+<source>
+    <function-name>fgetgrent_r</function-name>
+    <parameter-number>5</parameter-number>
+    <parameter-type>FILE *,struct group *, char *,
+        size_t , struct group **</parameter-type>
+    <parameter-order>fd, dst, dst,size_dst[2], dst</parameter-order>
+    <return-type>int</return-type>
+    <return-value>On success, these functions return 0</return-value>
+    <synopsis>  int fgetgrent_r(FILE *stream, struct group *gbuf, char *buf,
+        size_t buflen, struct group **gbufp);</synopsis>
+    <description>get group file entry reentrantly.
+        The nonreentrant functions return a pointer to static storage, where
+        this static storage contains further pointers to group name, password
+        and members.  The reentrant functions described here return all of
+        that in caller-provided buffers.  First of all there is the buffer
+        gbuf that can hold a struct group.  And next the buffer buf of size
+        buflen that can hold additional strings.  The result of these func‐
+        tions, the struct group read from the stream, is stored in the pro‐
+        vided buffer *gbuf, and a pointer to this struct group is returned in
+        *gbufp.  </description>
+</source>
+<source>
+    <function-name>getdomainnname</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-type>char *, size_t</parameter-type>
+    <parameter-order> dst,size_dst </parameter-order>
+    <return-type>int</return-type>
+    <return-value> On success, zero is returned.  On error, -1 is returned,</return-value>
+    <synopsis> int getdomainname(char *name, size_t len);   </synopsis>
+    <description> getdomainname() returns the null-terminated domain name in the
+        character array name, which has a length of len bytes.  If the null-
+        terminated domain name requires more than len bytes, getdomainname()
+        returns the first len bytes (glibc) or gives an error (libc).
+    </description>
+</source>
+<source>
+    <function-name>getpwent</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-type>void</parameter-type>
+    <parameter-order>null</parameter-order>
+    <return-type>struct passwd *</return-type>
+    <return-value>dst</return-value>
+    <synopsis> struct passwd *getpwent(void);</synopsis>
+    <description>The getpwent() function returns a pointer to a structure containing
+        the broken-out fields of a record from the password database (e.g.,
+        the local password file /etc/passwd, NIS, and LDAP).  The first time
+        getpwent() is called, it returns the first entry; thereafter, it
+        returns successive entries.
+    </description>
+</source>
+<source>
+    <function-name>getpwent_r</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-type>struct passwd *, char *, size_t , struct passwd **</parameter-type>
+    <parameter-order>dst, dst,size_dst[2], dst</parameter-order>
+    <return-type>int</return-type>
+    <return-value>On success, these functions return 0</return-value>
+    <synopsis> int getpwent_r(struct passwd *pwbuf, char *buf, size_t buflen, struct passwd **pwbufp); </synopsis>
+    <description>get passwd file entry reentrantly</description>
+</source>
+<source>
+    <function-name>fgetpwent</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-type>FILE *</parameter-type>
+    <parameter-order>fd</parameter-order>
+    <return-type>struct passwd *</return-type>
+    <return-value>dst</return-value>
+    <synopsis> struct passwd *fgetpwent(FILE *stream);</synopsis>
+    <description> The fgetpwent() function returns a pointer to a structure containing
+        the broken out fields of a line in the file stream.  The first time
+        it is called it returns the first entry; thereafter, it returns
+        successive entries.  The file referred to by stream must have the
+        same format as /etc/passwd (see passwd(5)).
+    </description>
+    <!--  struct passwd {
+     char   *pw_name;       /* username */
+     char   *pw_passwd;     /* user password */
+     uid_t   pw_uid;        /* user ID */
+     gid_t   pw_gid;        /* group ID */
+     char   *pw_gecos;      /* real name */
+     char   *pw_dir;        /* home directory */
+     char   *pw_shell;      /* shell program */
+     };
+     -->
+</source>
+<source>
+    <function-name>fgetpwent_r</function-name>
+    <parameter-number>5</parameter-number>
+    <parameter-type>FILE *,struct passwd *, char *, size_t , struct passwd **</parameter-type>
+    <parameter-order>fd,dst, dst,size_dst[2], dst</parameter-order>
+    <return-type>int</return-type>
+    <return-value>On success, these functions return 0 </return-value>
+    <synopsis> int fgetpwent_r(FILE *stream, struct passwd *pwbuf, char *buf, size_t buflen, struct passwd **pwbufp); </synopsis>
+    <description>get passwd file entry reentrantly</description>
+</source>
+<source>
+    <function-name>envz_entry</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-type>const char *, size_t *, const char *</parameter-type>
+    <parameter-order>src , len_src ,str</parameter-order>
+    <return-type>char *</return-type>
+    <return-value>dst</return-value>
+    <synopsis> char *envz_entry(const char *envz, size_t *envz_len, const char *name);
+    </synopsis>
+    <description>envz_entry() looks for name in the envz vector
+        (envz, envz_len) and returns the entry if found, or NULL if not.
+    </description>
+</source>
+<source>
+    <function-name>envz_get</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-type>const char *, size_t *, const char *</parameter-type>
+    <parameter-order>src , len_src ,str</parameter-order>
+    <return-type>char *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>  char *envz_get(const char *envz, size_t *envz_len, const char *name); </synopsis>
+    <description> envz_get() looks for name in the envz vector (envz, envz_len)
+        and returns the value if found, or NULL if not.
+        (Note that the value can also be NULL, namely when there is an entry for name without '=' sign.)
+    </description>
+</source>
+<source>
+    <!-- C++ this function can read or write, when wtirte it hasa a 1 param  -->
+    <function-name>rdbuf</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>void</parameter-type>
+    <return-type>streambuf* </return-type>
+    <return-value>dst</return-value>
+    <synopsis> streambuf* rdbuf() const;</synopsis>
+    <description>null</description>
+</source>
+<source>
+    <function-name> get</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>dst</parameter-order>
+    <parameter-type>char&amp;</parameter-type>
+    <return-type>istream&amp;</return-type>
+    <return-value>null</return-value>
+    <synopsis>istream&amp; get (char&amp; c);</synopsis>
+    <description>null</description>
+</source>
+<source>
+    <function-name> get</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, size_dst</parameter-order>
+    <parameter-type>char* , streamsize</parameter-type>
+    <return-type>istream&amp;</return-type>
+    <return-value>null</return-value>
+    <synopsis> istream&amp; get (char* s, streamsize n);</synopsis>
+    <description> A null character ('\0') is automatically appended to
+        the written sequence if n is greater than zero, even if an empty string is extracted.
+    </description>
+</source>
+<source>
+    <function-name> get</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, size_dst, char</parameter-order>
+    <parameter-type>char* , streamsize , char</parameter-type>
+    <return-type>istream&amp;</return-type>
+    <return-value>null</return-value>
+    <synopsis>     istream&amp; get (char* s, streamsize n, char delim);</synopsis>
+    <description>A null character ('\0') is automatically appended to the written sequence
+        if n is greater than zero, even if an empty string is extracted.
+    </description>
+</source>
+<source>
+    <function-name> get</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>dst</parameter-order>
+    <parameter-type>streambuf&amp;</parameter-type>
+    <return-type>istream&amp;</return-type>
+    <return-value>null</return-value>
+    <synopsis>  istream&amp; get (streambuf&amp; sb);</synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name> get</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, char</parameter-order>
+    <parameter-type>streambuf&amp;, char</parameter-type>
+    <return-type>istream&amp;</return-type>
+    <return-value>null</return-value>
+    <synopsis> istream&amp; get (streambuf&amp; sb, char delim);</synopsis>
+    <description></description>
+</source>
+<source>
+    <function-name>getline </function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order> dst, size_dst</parameter-order>
+    <parameter-type>char* , streamsize</parameter-type>
+    <return-type>istream&amp;</return-type>
+    <return-value>null</return-value>
+    <synopsis>istream&amp; getline (char* s, streamsize n ); </synopsis>
+    <description>  Extracts characters from the stream as unformatted input and
+        stores them into s as a c-string, until either the extracted character is
+        the delimiting character, or n characters have been written to s
+        (including the terminating null character).</description>
+</source>
+<source>
+    <function-name>getline </function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order> dst, size_dst, char</parameter-order>
+    <parameter-type>char* , streamsize, char</parameter-type>
+    <return-type>istream&amp;</return-type>
+    <return-value>null</return-value>
+    <synopsis>istream&amp; getline (char* s, streamsize n, char delim );</synopsis>
+    <description>  Extracts characters from the stream as unformatted input and stores them into
+        s as a c-string, until either the extracted character is the delimiting character,
+        or n characters have been written to s (including the terminating null character).</description>
+</source>
+<source>
+    <function-name>read</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, len_src </parameter-order>
+    <parameter-type>char* , streamsize</parameter-type>
+    <return-type>istream&amp;</return-type>
+    <return-value></return-value>
+    <synopsis>istream&amp; read (char* s, streamsize n);</synopsis>
+    <description> Extracts n characters from the stream and stores them in the array pointed to by s.</description>
+</source>
+<source>
+    <function-name>readn</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>num,dst, len_dst </parameter-order>
+    <parameter-type>int , void *, size_t </parameter-type>
+    <return-type>ssize_t</return-type>
+    <return-value></return-value>
+    <synopsis>ssize_t readn(int filedes, void *buff, size_t nbytes);</synopsis>
+    <description> Read n bytes from a descriptor.</description>
+</source>
+<source>
+    <function-name> readsome</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order> dst, len_src </parameter-order>
+    <parameter-type>char* , streamsize</parameter-type>
+    <return-type>streamsize</return-type>
+    <return-value>null</return-value>
+    <synopsis>streamsize readsome (char* s, streamsize n);</synopsis>
+    <description> Extracts up to n characters from the stream and stores them in
+        the array pointed by s, stopping as soon as the internal buffer kept by
+        the associated stream buffer object (if any) runs out of characters,
+        even if the end-of-file has not yet been reached.</description>
+</source>
+<source>
+    <!-- may remoeve  -->
+    <function-name> in_avail</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>void</parameter-type>
+    <return-type>streamsize</return-type>
+    <return-value>num_dst</return-value>
+    <synopsis>streamsize in_avail(); </synopsis>
+    <description>Get number of characters available to read
+        Returns the number of characters available to read.
+        This value depends on whether there are read positions
+        directly available at the get pointer (gptr): </description>
+</source>
+<source>
+    <function-name>showmanyc </function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>"" ""</parameter-order>
+    <parameter-type>void</parameter-type>
+    <return-type>streamsize</return-type>
+    <return-value>num_dst</return-value>
+    <synopsis> streamsize showmanyc();</synopsis>
+    <description>Returns an estimate on the number of
+        characters available in the associated file.</description>
+</source>
+<source>
+    <function-name>xsgetn </function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, len_src </parameter-order>
+    <parameter-type>char* , streamsize</parameter-type>
+    <return-type>streamsize</return-type>
+    <return-value>null</return-value>
+    <synopsis> streamsize xsgetn (char* s, streamsize n);</synopsis>
+    <description> Retrieves characters from the controlled input sequence and stores
+        them in the array pointed by s, until either n characters have been extracted or
+        the end of the sequence is reached.
+    </description>
+</source>
+<source>
+    <function-name>wcin</function-name>
+    <operandCount>1</operandCount>
+    <operator>&gt;&gt;</operator>
+    <operandType>any</operandType>
+    <synopsis></synopsis>
+    <description> wcin is unsafe. No bounds checking is performed. Buffer is easily overflowable by user.
+    </description>
+</source>
+<source>
+    <function-name>cin</function-name>
+    <operandCount>1</operandCount>
+    <operator>&gt;&gt;</operator>
+    <operandType>any</operandType>
+    <synopsis></synopsis>
+    <description> cin is unsafe. No bounds checking is performed. Buffer is easily overflowable by user. </description>
+</source>
+<source>
+    <function-name>fdopen</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>num,str</parameter-order>
+    <parameter-type>int , const char *</parameter-type>
+    <return-type>FILE *</return-type>
+    <return-value>stream</return-value>
+    <synopsis> FILE *fdopen(int fd, const char *mode);</synopsis>
+    <description>function associates a stream with the existing file descriptor, fd.</description>
+</source>
+<source>
+    <function-name>fopen</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>num,str</parameter-order>
+    <parameter-type>int , const char *</parameter-type>
+    <return-type>FILE *</return-type>
+    <return-value>stream</return-value>
+    <synopsis>FILE *fopen(const char *path, const char *mode); </synopsis>
+    <description>opens the file whose name is the string pointed
+        to by path and associates a stream with it.</description>
+</source>
+<source>
+    <function-name>freopen</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>str, srt, fd</parameter-order>
+    <parameter-type> const char * , const char * , FILE * </parameter-type>
+    <return-type>FILE *</return-type>
+    <return-value>stream</return-value>
+    <synopsis> FILE * freopen ( const char * filename, const char * mode, FILE * stream );</synopsis>
+    <description> opens the file whose name is the string pointed to
+        by path and associates the stream pointed to by stream with it</description>
+</source>
+<source>
+    <function-name>getch</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>void</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis> int getch(void);</synopsis>
+    <description>reads a single byte character from input.</description>
+</source>
+<source>
+    <function-name>fgetln</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>fd, len_src</parameter-order>
+    <parameter-type>FILE *, size_t *</parameter-type>
+    <return-type>char *</return-type>
+    <return-value>dst</return-value>
+    <synopsis> char * fgetln(FILE *stream, size_t *len);</synopsis>
+    <description> get a line from a stream, and return The text to which the returned pointer points </description>
+</source>
+<source>
+    <function-name>socket</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>num, num,num</parameter-order>
+    <parameter-type>int , int , int </parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, a file descriptor for the new socket is returned.
+        On error, -1 is returned,</return-value>
+    <synopsis>  int socket(int domain, int type, int protocol);</synopsis>
+    <description>create an endpoint for communication</description>
+</source>
+<source>
+    <function-name>getche</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>void</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis>int getche(void);</synopsis>
+    <description>reads a single byte character from input.</description>
+</source>
+<source>
+    <function-name>fgetwc </function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>fd</parameter-order>
+    <parameter-type>FILE *</parameter-type>
+    <return-type>wint_t</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis>wint_t fgetwc( FILE *stream );</synopsis>
+    <description>Reads the next wide character from the given input stream.</description>
+</source>
+<source>
+    <function-name>fgetc_unlocked</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>fd</parameter-order>
+    <parameter-type>FILE *</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis>int fgetc_unlocked(FILE *stream);</synopsis>
+    <description>nonlocking stdio functions</description>
+</source>
+<source>
+    <function-name>fgetwc_unlocked</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>fd</parameter-order>
+    <parameter-type>FILE *</parameter-type>
+    <return-type>wint_t</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis>wint_t fgetwc_unlocked(FILE *stream);</synopsis>
+    <description>nonlocking stdio functions</description>
+</source>
+<source>
+    <function-name>getwchar_unlocked</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>void</parameter-type>
+    <return-type>wint_t</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis>wint_t getwchar_unlocked(void);</synopsis>
+    <description> nonlocking stdio functions</description>
+</source>
+<source>
+    <function-name>getchar_unlocked</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>void</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis>int getchar_unlocked(void);</synopsis>
+    <description>stdin with explicit client locking</description>
+</source>
+<source>
+    <function-name>getc_unlocked</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>fd</parameter-order>
+    <parameter-type>FILE *</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis>int getc_unlocked(FILE *stream);</synopsis>
+    <description>stdin with explicit client locking</description>
+</source>
+<source>
+    <function-name> getwc</function-name>
+    <parameter-number>1</parameter-number>
+    <parameter-order>fd</parameter-order>
+    <parameter-type>FILE* </parameter-type>
+    <return-type>wint_t</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis>wint_t getwc (FILE* stream);</synopsis>
+    <description>Returns the wide character currently pointed by the
+        internal position indicator of the specified stream. </description>
+</source>
+<source>
+    <function-name> getwchar</function-name>
+    <parameter-number>0</parameter-number>
+    <parameter-order>null</parameter-order>
+    <parameter-type>null</parameter-type>
+    <return-type>int_t</return-type>
+    <return-value>On success, the character read is returned</return-value>
+    <synopsis>int_t getwchar (void);</synopsis>
+    <description>Returns the next wide character from the standard input (stdin).
+    </description>
+</source>
+<source>
+    <function-name> gets_s</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, len_dst</parameter-order>
+    <parameter-type>char *, rsize_t </parameter-type>
+    <return-type>char *</return-type>
+    <return-value>str on success, a null pointer on failure.</return-value>
+    <synopsis>char *gets_s( char *str, rsize_t n );</synopsis>
+    <description>Reads characters from stdin until a newline is found or end-of-file occurs.</description>
+</source>
+<source>
+    <function-name>open</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>str,num</parameter-order>
+    <parameter-type> const char *, int</parameter-type>
+    <return-type>int </return-type>
+    <return-value>on success, returns a pointer to an open stream that can be
+        used to read or write to the pipe; if the fork(2) or pipe(2) calls
+        fail, or if the function cannot allocate memory, NULL is returned </return-value>
+    <synopsis> int open(const char *path, int oflag, ... );</synopsis>
+    <description>- pipe stream to or from a process</description>
+</source>
+<source>
+    <function-name>popen</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>str,str</parameter-order>
+    <parameter-type> const char *, const char *</parameter-type>
+    <return-type>FILE * </return-type>
+    <return-value>on success, returns a pointer to an open stream that can be
+        used to read or write to the pipe; if the fork(2) or pipe(2) calls
+        fail, or if the function cannot allocate memory, NULL is returned </return-value>
+    <synopsis> FILE *popen(const char *command, const char *type);</synopsis>
+    <description>- pipe stream to or from a process</description>
+</source>
+<!--    =====================String operation ================================== -->
+<!--     Formatted string input (e.g., scanf, sscanf)  -->
+<source>
+    <function-name>scanf</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>frm,dst</parameter-order>
+    <parameter-type>const char *, any</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the function returns the number of items
+        of the argument list successfully filled. </return-value>
+    <synopsis>int scanf( const char * format, ... );</synopsis>
+    <description>Reads data from stdin and stores them according to the parameter format
+        into the locations pointed by the additional arguments.</description>
+</source>
+<source>
+    <function-name>wscanf</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>frm,dst</parameter-order>
+    <parameter-type>const wchar_t *restrict , any</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the function returns the number of
+        items of the argument list successfully filled. </return-value>
+    <synopsis>int wscanf(const wchar_t *restrict format, ... ); </synopsis>
+    <description>Reads data from stdin and stores them according to the
+        C wide string format into the locations pointed by the additional arguments.</description>
+</source>
+<source>
+    <function-name>fwscanf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd,frm,dst</parameter-order>
+    <parameter-type>FILE * , const wchar_t *, any </parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the function returns the number of
+        items of the argument list successfully filled. </return-value>
+    <synopsis> int fwscanf(FILE * stream, const wchar_t *restrict format, ... );</synopsis>
+    <description>Reads data from the stream and stores them according to the
+        C wide string format into the locations pointed by the additional arguments.</description>
+</source>
+<source>
+    <function-name>vscanf</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>frm,dst</parameter-order>
+    <parameter-type>const char *, va_list</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the function returns the number of items of
+        the argument list successfully filled.</return-value>
+    <synopsis>int vscanf ( const char * format, va_list arg ); </synopsis>
+    <description>Reads data from the standard input (stdin) and stores them according to parameter format
+        into the locations pointed by the elements in the variable argument list identified by arg.
+        Internally, the function retrieves arguments from the list identified by
+        arg as if va_arg was used on it, and thus the state of arg is likely to be altered by the call. </description>
+</source>
+<source>
+    <function-name>fscanf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd,frm,dst</parameter-order>
+    <parameter-type> FILE *, const char *,any</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the function returns the number of items of
+        the argument list successfully filled.</return-value>
+    <synopsis> int fscanf ( FILE * stream, const char * format, ... );</synopsis>
+    <description>Reads data from the stream and stores them according to
+        the parameter format into the locations pointed by the additional arguments.</description>
+</source>
+<source>
+    <function-name>vfscanf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd,frm,dst</parameter-order>
+    <parameter-type>FILE *, const char *, va_list</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the function returns the number of
+        items of the argument list successfully filled.</return-value>
+    <synopsis>int vfscanf(FILE *stream, const char *format, va_list ap); </synopsis>
+    <description>Reads data from the stream and stores them according to the parameter format into
+        the locations pointed by the additional arguments.</description>
+</source>
+<source>
+    <function-name> vwscanf </function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>frm, dst</parameter-order>
+    <parameter-type>const wchar_t * , va_list  </parameter-type>
+    <return-type> int  </return-type>
+    <return-value> On success, the function returns the number of
+        items of the argument list successfully filled. </return-value>
+    <synopsis> int vwscanf ( const wchar_t * format, va_list arg ); </synopsis>
+    <description> Reads data from the standard input (stdin) and stores them according to the C wide string
+        format into the locations pointed by the elements in the variable argument list identified by arg.
+    </description>
+</source>
+<source>
+    <function-name> vfwscanf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd, frm, dst</parameter-order>
+    <parameter-type>FILE* , const wchar_t* , va_list  </parameter-type>
+    <return-type> int  </return-type>
+    <return-value> On success, the function returns the number of
+        items of the argument list successfully filled. </return-value>
+    <synopsis> int vfwscanf (FILE* stream, const wchar_t* format, va_list arg); </synopsis>
+    <description> Reads data from the stream and stores them according to the C wide string format into the
+        locations pointed by the elements in the variable argument list identified by arg. </description>
+</source>
+<!-- =====================  Sink ========================== -->
+<!-- The format string security-enhanced functions include the suffix _s  are an improvement over the existing C Standard functions
+ in that they can prevent writing to memory, they cannot prevent format string vulnerabilities that crash a program or
+ are used to view memory. As a result, it is necessary to take the same precautions when using these functions as when
+ using the non-_s formatted output functions [1].
+ 
+ [1] Seacord, R. (2006). Secure coding in C and C++ of strings and integers. IEEE security & privacy, 4(1), 74-76.
+ 
+ Also, the security-enhanced string and memory functions include the suffix _s lead to crashing the program as a defense mechanism
+ -->
+<sink>
+    <function-name>vsscanf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>src,frm,dst</parameter-order>
+    <parameter-type>const char *, const char *, va_list</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the function returns the number of items of
+        the argument list successfully filled.</return-value>
+    <synopsis> int vsscanf ( const char * s, const char * format, va_list arg ); </synopsis>
+    <description>Reads data from s and stores them according to parameter format into the
+        locations pointed by the elements in the variable argument list identified by arg.
+    </description>
+</sink>
+<sink>
+    <function-name>snscanf</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order> dst, size_dst, frm</parameter-order>
+    <parameter-type>const char *str, const size_t buflen, const char *format, ... </parameter-type>
+    <return-type> int</return-type>
+    <return-value>""</return-value>
+    <synopsis> int snscanf(const char *str, const size_t buflen, const char *format, ...);</synopsis>
+    <description></description>
+</sink>
+<sink>
+    <function-name>sscanf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>src,frm,dst</parameter-order>
+    <parameter-type>const char *, const char *, any</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the function returns the number of
+        items of the argument list successfully filled.</return-value>
+    <synopsis> int sscanf(const char *str, const char *format, ...);</synopsis>
+    <description>Reads data from s and stores them according to
+        parameter format into the locations given
+        by the additional arguments, as if scanf was used, but reading
+        from s instead of the standard input (stdin)..</description>
+</sink>
+<sink>
+    <function-name>swscanf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>src, frm, dst</parameter-order>
+    <parameter-type>const wchar_t *restrict , const wchar_t *, any </parameter-type>
+    <return-type> int</return-type>
+    <return-value>On success, the function returns the number of
+        items of the argument list successfully filled.</return-value>
+    <synopsis>int swscanf(const wchar_t *restrict ws, const wchar_t *restrict format, ... ); </synopsis>
+    <description>Reads data from the wide string ws and stores them according to parameter format into the locations
+        given by the additional arguments, as if wscanf was used, but reading from ws instead of the standard input (stdin).
+    </description>
+</sink>
+<sink>
+    <function-name> vswscanf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>src, frm, dst</parameter-order>
+    <parameter-type>const wchar_t * , const wchar_t*  ,va_list  </parameter-type>
+    <return-type> int  </return-type>
+    <return-value> On success, the function returns the number of
+        items of the argument list successfully filled. </return-value>
+    <synopsis> int vswscanf (const wchar_t* ws, const wchar_t* format, va_list arg); </synopsis>
+    <description> Reads data from ws and stores them according to parameter format into the
+        locations pointed by the elements in the variable argument list identified by arg. </description>
+</sink>
+<!--  end of scanf family   -->
+<!--  Formatted string output (e.g., sprintf, snprintf) -->
+<sink>
+    <function-name>printf</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>frm,src</parameter-order>
+    <parameter-type>const char *, any</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned. </return-value>
+    <synopsis> int printf(const char *format, ...);</synopsis>
+    <description>Writes the C string pointed by format to the standard output (stdout). If format includes
+        format specifiers (subsequences beginning with %), the additional arguments following format
+        are formatted and inserted in the resulting string replacing their respective specifiers.</description>
+</sink>
+<sink>
+    <function-name>sprintf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst,frm, src</parameter-order>
+    <parameter-type>char *,const char *,any</parameter-type>
+    <return-type> int </return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-value>
+    <synopsis> int sprintf(char *str, const char *format, ...);</synopsis>
+    <description>Composes a string with the same text that would be printed if format was used on printf,
+        but instead of being printed, the content is stored as a C string in the buffer pointed by str.</description>
+    <bug>Because sprintf() and vsprintf() assume an arbitrarily long string, callers must be careful not to overflow
+        the actual space; this is often impossible to assure. Note that the length of the strings produced is
+        locale-dependent and difficult to predict. Use snprintf() and vsnprintf() instead (or asprintf(3) and vasprintf(3)).
+        Linux libc4.[45] does not have a snprintf(), but provides a libbsd that contains an snprintf() equivalent to sprintf(),
+        that is, one that ignores the size argument. Thus, the use of snprintf() with early libc4 leads to serious security problems.
+        Code such as printf(foo); often indicates a bug, since foo may contain a % character.
+        If foo comes from untrusted user input, it may contain %n, causing the printf() call to write
+        to memory and creating a security hole.</bug>
+</sink>
+<sink>
+    <function-name>wprintf</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>frm,src</parameter-order>
+    <parameter-type>const wchar_t *,any </parameter-type>
+    <return-type>int </return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-value>
+    <synopsis>int wprintf(const wchar_t *format, ...); </synopsis>
+    <description> Writes the C wide string pointed by format to the standard output (stdout),
+        replacing any format specifier in the same way as printf does. </description>
+</sink>
+<sink>
+    <function-name>vwprintf</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>frm, src</parameter-order>
+    <parameter-type>const wchar_t *, va_list  </parameter-type>
+    <return-type> int</return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-value>
+    <synopsis>int vwprintf(const wchar_t *format, va_list args); </synopsis>
+    <description>Writes the C wide string pointed by format to the standard output (stdout),
+        replacing any format specifier in the same way as printf does, but using the elements
+        in the variable argument list identified by arg instead of additional function arguments.
+    </description>
+</sink>
+<sink>
+    <!-- this function may write data into file stream, it could be vulnerable if frm is controled   -->
+    <function-name>vfprintf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst,frm,src</parameter-order>
+    <parameter-type>FILE *, const char *, va_list</parameter-type>
+    <return-type> int </return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-value>
+    <synopsis> int vfprintf(FILE *stream, const char *format, va_list ap);</synopsis>
+    <description>Writes the C string pointed by format to the stream</description>
+</sink>
+<sink>
+    <function-name>snprintf</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst ,frm, src</parameter-order>
+    <parameter-type>char *, size_t , const char *, any </parameter-type>
+    <return-type> int</return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-value>
+    <synopsis>int snprintf(char *str, size_t size, const char *format, ...); </synopsis>
+    <description>The functions snprintf() writes at most size bytes (including the terminating
+        null byte ('0')) to str. Composes a string with the same text that would be printed if
+        format was used on printf, but instead of being printed, the content is stored as a C string
+        in the buffer pointed by s (taking n as the maximum buffer capacity to fill).</description>
+</sink>
+<sink>
+    <function-name>vsnprintf</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, len_dst , frm,  src</parameter-order>
+    <parameter-type> char *, size_t , const char *, va_list</parameter-type>
+    <return-type> int</return-type>
+    <return-value> On success, the total number of characters written is returned,
+        when error occurs a negative number is returned. </return-value>
+    <synopsis> int vsnprintf(char *str, size_t size, const char *format, va_list ap);</synopsis>
+    <description>  Composes a string with the same text that would be printed if format was used on printf,
+        but using the elements in the variable argument list identified by arg instead of additional
+        function arguments and storing the resulting content as a C string in the buffer pointed by s
+        (taking n as the maximum buffer capacity to fill). </description>
+</sink>
+<sink>
+    <function-name> vasnprintf </function-name>
+    <!-- dynamically allocated buffer -->
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst , frm , src</parameter-order>
+    <parameter-type>struct obstack *, const char *, any  </parameter-type>
+    <return-type>  char *</return-type>
+    <return-value>""</return-value>
+    <synopsis> char * vasnprintf (char *resultbuf, size_t * lengthp, const char *format, va_list args)</synopsis>
+    <description>write formatted output to a dynamically allocated string, and store
+        the address of that string in the location referenced by resultbuf. </description>
+</sink>
+<sink>
+    <function-name>swprintf</function-name>
+    <!-- no BO  size_dst alwayse evaluted internally and turncated -->
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, frm,src</parameter-order>
+    <parameter-type>wchar_t *, size_t , const wchar_t *, any </parameter-type>
+    <return-type> int</return-type>
+    <return-value> The functions return the number of wide characters written,
+        excluding the terminating null wide character in case of the functions
+        swprintf() and vswprintf(). They return -1 when an error occurs.
+    </return-value>
+    <synopsis>int swprintf(wchar_t *wcs, size_t maxlen, const wchar_t *format, ...); </synopsis>
+    <description>Composes a wide string with the same text that would be printed if
+        format was used on wprintf, but instead of being printed,
+        the content is stored as a C wide string in the buffer pointed by ws.
+        If the resulting wide string would be longer than len-1 characters,
+        the remaining characters are discarded and not stored.
+        A terminating null character is automatically appended after the content. </description>
+</sink>
+<sink>
+    <function-name>vswprintf</function-name>
+    <!--size_dst alwayse evaluted internally and turncated, yet Abort trap: 6 i size does not match-->
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, frm, src</parameter-order>
+    <parameter-type>wchar_t *, size_t , const wchar_t *, va_list </parameter-type>
+    <return-type> int</return-type>
+    <return-value> The functions return the number of wide characters written,
+        excluding the terminating null wide character
+        in case of the functions swprintf() and vswprintf().
+        They return -1 when an error occurs.
+    </return-value>
+    <synopsis>int vswprintf(wchar_t *wcs, size_t maxlen, const wchar_t *format, va_list args); </synopsis>
+    <description>The swprintf() and vswprintf() functions perform wide-character output to an array of wide characters.
+        The programmer must ensure that there is room for at least maxlen wide characters at wcs.</description>
+</sink>
+<sink>
+    <function-name>fwprintf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst,frm,src</parameter-order>
+    <parameter-type> FILE *, const wchar_t *, any</parameter-type>
+    <return-type>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-type>
+    <return-value> int</return-value>
+    <synopsis> int fwprintf(FILE *stream, const wchar_t *format, ...);</synopsis>
+    <description>Writes the C wide string pointed by format to the stream.</description>
+</sink>
+<sink>
+    <function-name>vfwprintf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, frm, src</parameter-order>
+    <parameter-type> FILE *, const wchar_t *, va_list</parameter-type>
+    <return-type>int </return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-value>
+    <synopsis> int vfwprintf(FILE *stream, const wchar_t *format, va_list args);</synopsis>
+    <description>Writes the C wide string pointed by format to the stream, </description>
+</sink>
+<sink>
+    <function-name>vsprintf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst,frm,src</parameter-order>
+    <parameter-type>char *, const char *, va_list</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-value>
+    <synopsis>int vsprintf(char *str, const char *format, va_list ap); </synopsis>
+    <description> Composes a string with the same text that would be printed if format
+        was used on printf, but using the elements in the variable argument list identified by arg
+        instead of additional function arguments and storing the resulting content
+        as a C string in the buffer pointed by s.
+    </description>
+    <bug>Because sprintf() and vsprintf() assume an arbitrarily long string, callers must be careful not to overflow
+        the actual space; this is often impossible to assure. Note that the length of the strings produced is
+        locale-dependent and difficult to predict. Use snprintf() and vsnprintf() instead (or asprintf(3) and vasprintf(3)).
+        Linux libc4.[45] does not have a snprintf(), but provides a libbsd that contains an snprintf() equivalent to sprintf(),
+        that is, one that ignores the size argument. Thus, the use of snprintf() with early libc4 leads to serious security problems.
+        Code such as printf(foo); often indicates a bug, since foo may contain a % character.
+        If foo comes from untrusted user input, it may contain %n, causing the printf() call to
+        write to memory and creating a security hole.</bug>
+</sink>
+<sink>
+    <function-name>fprintf</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst,frm,src</parameter-order>
+    <parameter-type>FILE *, const char *,any</parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-value>
+    <synopsis> int fprintf ( FILE * stream, const char * format, ... ); </synopsis>
+    <description>Writes the C string pointed by format to the stream.
+        If format includes format specifiers (subsequences beginning with %), the additional arguments
+        following format are formatted and inserted in the resulting string replacing their respective specifiers.
+    </description>
+</sink>
+<sink>
+    <function-name>vprintf</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>frm,src</parameter-order>
+    <parameter-type>const char * , va_list  </parameter-type>
+    <return-type>int</return-type>
+    <return-value>On success, the total number of characters written is returned,
+        when error occurs a negative number is returned.</return-value>
+    <synopsis> int vprintf ( const char * format, va_list arg ); </synopsis>
+    <description>Writes the C string pointed by format to the standard output (stdout),
+        replacing any format specifier in the same way as printf does, but using the elements
+        in the variable argument list identified by arg instead of additional function arguments.</description>
+</sink>
+<sink>
+    <function-name> asprintf </function-name>
+    <!--   BO  dynamicaly allocate buffer but it can cause stack overflow  -->
+    <parameter-number>2</parameter-number>
+    <parameter-order>src, frm</parameter-order>
+    <parameter-type>char **,const char * </parameter-type>
+    <return-type> int  </return-type>
+    <return-value> On success, the total number of characters written is returned,
+        when error occurs a negative number is returned. </return-value>
+    <synopsis>  int asprintf(char **strp, const char *fmt, ...); </synopsis>
+    <description>The functions asprintf() and vasprintf() are analogs of sprintf(3) and vsprintf(3),
+        except that they allocate a string large enough to hold the output including the terminating null byte,
+        and return a pointer to it via the first argument. This pointer should be passed to free(3)
+        to release the allocated storage when it is no longer needed.
+    </description>
+</sink>
+<sink>
+    <function-name> vasprintf </function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, frm, src</parameter-order>
+    <parameter-type>char **, const char *, va_list  </parameter-type>
+    <return-type> int  </return-type>
+    <return-value> On success, the total number of characters written is returned,
+        when error occurs a negative number is returned. </return-value>
+    <synopsis>  int vasprintf(char **strp, const char *fmt, va_list ap);</synopsis>
+    <description> allocate a string large enough to hold the output including the terminating null byte,
+        and return a pointer to it via the first argument. This pointer should be passed to free(3)
+        to release the allocated storage when it is no longer needed.
+    </description>
+</sink>
+<sink>
+    <function-name>vprintf_s</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>frm, src</parameter-order>
+    <parameter-type> const void *,va_list</parameter-type>
+    <return-type> int</return-type>
+    <return-value> The number of characters written </return-value>
+    <synopsis> int vprintf_s( const char *restrict format, va_list arg);</synopsis>
+    <description> Loads the data from the locations, defined by vlist, converts them to character
+        string equivalents and writes the results to a variety of sinks.;</description>
+</sink>
+<sink>
+    <function-name>vfprintf_s</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>fd, frm, src</parameter-order>
+    <parameter-type> FILE *restrict , const char *restrict , va_list</parameter-type>
+    <return-type> int</return-type>
+    <return-value> The number of characters written </return-value>
+    <synopsis> int vfprintf_s( FILE *restrict stream, const char *restrict format, va_list arg);</synopsis>
+    <description> Loads the data from the locations, defined by vlist, converts them to character
+        string equivalents and writes the results to a variety of sinks.;</description>
+</sink>
+<sink>
+    <function-name>vsprintf_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, frm, src</parameter-order>
+    <parameter-type>  char *restrict buffer, rsize_t bufsz,   const char *restrict format, va_list arg </parameter-type>
+    <return-type> int</return-type>
+    <return-value> The number of characters written </return-value>
+    <synopsis> int vsprintf_s( char *restrict buffer, rsize_t bufsz,   const char *restrict format, va_list arg);</synopsis>
+    <description> Loads the data from the locations, defined by vlist, converts them to character
+        string equivalents and writes the results to a  sinks;</description>
+</sink>
+<sink>
+    <function-name>vsnprintf_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, frm, src</parameter-order>
+    <parameter-type>  char *restrict buffer, rsize_t bufsz,   const char *restrict format, va_list arg </parameter-type>
+    <return-type> int</return-type>
+    <return-value> The number of characters written </return-value>
+    <synopsis> vsnprintf_s(char *restrict buffer, rsize_t bufsz,  const char *restrict format, va_list arg);</synopsis>
+    <description> Loads the data from the locations, defined by vlist, converts them to character
+        string equivalents and writes the results to a  sinks;</description>
+</sink>
+<sink>
+    <function-name>syslog</function-name>
+    <!--http://androidxref.com/9.0.0_r3/xref/external/mdnsresponder/mDNSShared/PlatformCommon.c#buffer -->
+    <parameter-number>3</parameter-number>
+    <parameter-order>num, frm, src</parameter-order>
+    <parameter-type>int , const char *,any </parameter-type>
+    <return-type>void</return-type>
+    <return-value>null</return-value>
+    <synopsis>void syslog(int priority, const char *format, ...); </synopsis>
+    <description>syslog() generates a log message, which will be distributed by syslogd(8). </description>
+</sink>
+<sink>
+    <function-name>vsyslog</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>num, frm, src</parameter-order>
+    <parameter-type>int , const char * ,any</parameter-type>
+    <return-type>void</return-type>
+    <return-value>null</return-value>
+    <synopsis>void vsyslog(int priority, const char *format, va_list ap); </synopsis>
+    <description>The function vsyslog() performs the same task as syslog() with the difference that it
+        takes a set of arguments which have been obtained using the stdarg(3) variable argument list macros.</description>
+</sink>
+<sink>
+    <function-name> obstack_printf </function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, frm , src</parameter-order>
+    <parameter-type>struct obstack *, const char *, any </parameter-type>
+    <return-type> int </return-type>
+    <return-value> len_dst  </return-value>
+    <synopsis>  int obstack_printf (struct obstack *obs, const char *format, ...)</synopsis>
+    <description>Grow an obstack with formatted output.  Return the number of bytes
+        added to OBS.  No trailing nul byte is added, and the object should
+        be closed with obstack_finish before use.
+        Upon memory allocation error, call obstack_alloc_failed_handler.
+        Upon other error, return -1.</description>
+</sink>
+<sink>
+    <function-name> obstack_vprintf </function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, frm , src</parameter-order>
+    <parameter-type>struct obstack *, const char *, any  </parameter-type>
+    <return-type>  int</return-type>
+    <return-value> len_dst  </return-value>
+    <synopsis> obstack_vprintf (struct obstack *obs, const char *format, va_list args)</synopsis>
+    <description>Grow an obstack with formatted output.  Return the number of bytes
+        added to OBS.  No trailing nul byte is added, and the object should
+        be closed with obstack_finish before use.
+        Upon memory allocation error, call obstack_alloc_failed_handler.
+        Upon other error, return -1.</description>
+</sink>
+<!-- end of Format String   -->
+<!--  String Concatenation (e.g., strcat, strncat) -->
+<sink>
+    <function-name>strlcat</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, size_dst</parameter-order>
+    <parameter-type>char *,char *,size_t </parameter-type>
+    <return-type> char *</return-type>
+    <return-value> len_dst + len_src</return-value>
+    <synopsis> char strlcat(char *dst, const char *src, size_t size); </synopsis>
+    <info>null</info>
+    <description> The strlcat() function appends the NUL-terminated string src to the end of dst.
+        It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result. </description>
+</sink>
+<sink>
+    <function-name>strcat</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, src</parameter-order>
+    <parameter-type>  char *, char * </parameter-type>
+    <return-type>char * </return-type>
+    <return-value> len_dst + len_src</return-value>
+    <synopsis> char *strcat(char *dest, const char *src);</synopsis>
+    <description>The strcat() function appends the src string to the dest string,
+        overwriting the terminating null byte ('0') at the end of dest, and then
+        adds a terminating null byte.</description>
+</sink>
+<sink>
+    <function-name>strcat_s</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order> dst , size_dst,src </parameter-order>
+    <parameter-type>char *restrict , rsize_t , const char *restrict </parameter-type>
+    <return-type>errno_t</return-type>
+    <return-value>returns zero on success, returns non-zero on error. </return-value>
+    <synopsis> errno_t strcat_s(char *restrict dest, rsize_t destsz, const char *restrict src);</synopsis>
+    <description>null</description>
+</sink>
+<sink>
+    <function-name>strncat_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order> dst , size_dst,src , len_src</parameter-order>
+    <parameter-type>char *restrict , rsize_t , const char *restrict , rsize_t</parameter-type>
+    <return-type>errno_t</return-type>
+    <return-value>null</return-value>
+    <synopsis> errno_t strncat_s(char *restrict dest, rsize_t destsz,
+        const char *restrict src, rsize_t count);</synopsis>
+    <description>null</description>
+</sink>
+<sink>
+    <function-name>strncat</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, len_src</parameter-order>
+
+    <parameter-type> char *, char * , size_t</parameter-type>
+    <return-type>char * </return-type>
+    <return-value> len_dst + len_src</return-value>
+    <synopsis> char *strncat(char *dest, const char *src, size_t n);</synopsis>
+    <description>The strncat() function appends the src string to the dest string,
+        overwriting the terminating null byte ('0') at the end of dest, and then adds a terminating null byte.
+        It will use at most n bytes from src; and src does not need to be null-terminated if it contains n
+        or more bytes.</description>
+</sink>
+<sink>
+    <function-name>wcsncat</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, len_src</parameter-order>
+    <parameter-type>wchar_t *, const wchar_t *, size_t </parameter-type>
+    <return-type> wchar_t *  </return-type>
+    <return-value>dst + src </return-value>
+    <synopsis>wchar_t *wcsncat(wchar_t *dest, const wchar_t *src, size_t n);</synopsis>
+    <description>The wcsncat() function is the wide-character equivalent of the strncat(3) function.
+        It copies at most n wide characters from the wide-character string pointed to by src to the end
+        of the wide-character string pointed to by dest, and adds a terminating null wide character (Laq0aq).</description>
+</sink>
+<sink>
+    <function-name>wcsncat_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, src, len_src</parameter-order>
+    <parameter-type>wchar_t *restrict , rsize_t ,
+        const wchar_t *restrict , rsize_t </parameter-type>
+    <return-type> errno_t  </return-type>
+    <return-value> "" </return-value>
+    <synopsis>errno_t wcsncat_s( wchar_t *restrict dest, rsize_t destsz,
+        const wchar_t *restrict src, rsize_t count );</synopsis>
+    <description> this function may clobber the remainder of the destination array
+        (from the last wide character written to destsz) and that the following errors are detected at
+        runtime and call the currently installed constraint handler function:
+        src or dest is a null pointer
+        destsz or count is zero or greater than RSIZE_MAX/sizeof(wchar_t)
+        there is no null wide character in the first destsz wide characters of dest
+        truncation would occur: count or the length of src, whichever is less,
+        exceeds the space available between the null terminator of dest and destsz.
+        overlap would occur between the source and the destination strings</description>
+</sink>
+<sink>
+    <function-name> wcscat_s</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order> dest,  size_dst, src</parameter-order>
+    <parameter-type>wchar_t *restrict  , rsize_t  , const wchar_t *restrict  </parameter-type>
+    <return-type>errno_t</return-type>
+    <return-value>error</return-value>
+    <synopsis> errno_t wcscat_s(wchar_t *restrict dest, rsize_t destsz, const wchar_t *restrict src);</synopsis>
+    <description>null</description>
+</sink>
+<sink>
+    <function-name> wcscat</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, src</parameter-order>
+    <parameter-type>wchar_t *,  const wchar_t * </parameter-type>
+    <return-type> wchar_t *</return-type>
+    <return-value> src + dst</return-value>
+    <synopsis> wchar_t *wcscat( wchar_t *dest, const wchar_t *src ); </synopsis>
+    <description>   The wcscat() function is the wide-character equivalent of the
+        strcat(3) function.  It copies the wide-character string pointed to
+        by src, including the terminating null wide character (L'\0'), to the
+        end of the wide-character string pointed to by dest.
+        The strings may not overlap.
+        The programmer must ensure that there is room for at least
+        wcslen(dest)+wcslen(src)+1 wide characters at dest. </description>
+</sink>
+<!--   StringCopy (e.g., strcpy, strncpy)-->
+<sink>
+    <function-name>strcpy</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst src</parameter-order>
+    <parameter-type>char *,char * </parameter-type>
+    <return-type> char *</return-type>
+    <return-value>dst </return-value>
+    <synopsis>char * strcpy ( char * destination, const char * source );</synopsis>
+    <bug>If the destination string of a strcpy() is not large enough, then anything might happen.
+        Overflowing fixed-length string buffers is a favorite cracker technique for taking complete control of the machine.
+        Any time a program reads or copies data into a buffer, the program first needs to check that there's enough space.
+        This may be unnecessary if you can show that overflow is impossible, but be careful:
+        programs can get changed over time, in ways that may make the impossible possible.</bug>
+</sink>
+<sink>
+    <function-name>strncpy</function-name>
+    <!--__strncpy_chk in llmv-->
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, len_src</parameter-order>
+    <parameter-type>char *,char *,size_t </parameter-type>
+    <return-type> char *</return-type>
+    <info>   doesn't always \\0-terminate or check for invalid pointers [MS-banned] (CWE-120)",  </info>
+    <return-value> dst</return-value>
+    <synopsis> char *strncpy(char *dest, const char *src, size_t n); </synopsis>
+    <description> </description>
+</sink>
+<sink>
+    <function-name>strncpy_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, src, len_src</parameter-order>
+    <parameter-type>char *restrict , rsize_t ,
+        const char *restrict , rsize_t </parameter-type>
+    <return-type> errno_t</return-type>
+    <return-value>null</return-value>
+    <synopsis> errno_t strncpy_s(char *restrict dest, rsize_t destsz,
+        const char *restrict src, rsize_t count); </synopsis>
+    <description>  Also, consider using strlcpy() instead, if it is avaialable to you.</description>
+</sink>
+<sink>
+    <function-name>strlcpy</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, size_dst</parameter-order>
+    <parameter-type>char *,char *,size_t </parameter-type>
+    <return-type> size_t</return-type>
+    <return-value>len_dst</return-value>
+    <synopsis> size_t strlcpy(char *dst, const char *src, size_t size); </synopsis>
+    <description> The strlcpy() function copies up to size - 1 characters from
+        the NUL-terminated string src to dst, NUL-terminating the result.</description>
+</sink>
+<sink>
+    <function-name>strxfrm</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst,src, size_dst</parameter-order>
+    <parameter-type>char *, const char *, size_t</parameter-type>
+    <return-type> size_t</return-type>
+    <return-value>len_dst</return-value>
+    <synopsis> size_t strxfrm(char *dest, const char *src, size_t n) </synopsis>
+    <description> The strxfrm() function transforms the src string into a form such that the
+        result of strcmp(3) on two strings that have been transformed with strxfrm() is the same as
+        the result of strcoll(3) on the two strings before their transformation.
+        The first n bytes of the transformed string are placed in dest. </description>
+</sink>
+<sink>
+    <function-name>wcsxfrm</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, size_dst</parameter-order>
+    <parameter-type>wchar_t *restrict , const wchar_t *restrict , size_t</parameter-type>
+    <return-type>size_t </return-type>
+    <return-value>len_dst</return-value>
+    <synopsis> size_t wcsxfrm(wchar_t *restrict ws1, const wchar_t *restrict ws2, size_t n);</synopsis>
+    <description>The wcsxfrm() function shall transform the wide-character string pointed to by ws2 and place
+        the resulting wide-character string into the array pointed to by ws1. </description>
+</sink>
+<sink>
+    <function-name>wcsncpy</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, len_src</parameter-order>null
+    
+    <!-- size_sc here is not sure is that for src or dst?   -->
+    <parameter-type>wchar_t *, const wchar_t *, size_t n</parameter-type>
+    <return-type> wchar_t * </return-type>
+    <return-value>dst</return-value>
+    <synopsis> wchar_t *wcsncpy(wchar_t *dest, const wchar_t *src, size_t n);</synopsis>
+    <description>The wcsncpy() function is the wide-character equivalent of the strncpy(3) function.
+        It copies at most n wide characters from the wide-character string pointed to by src,
+        including the terminating null wide character (Laq0aq), to the array pointed to by dest.</description>
+</sink>
+<sink>
+    <function-name>wcsncpy_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst , src, len_src</parameter-order>null
+    <parameter-type>wchar_t *restrict , rsize_t ,
+        const wchar_t *restrict , rsize_t </parameter-type>
+    <return-type> errno_t </return-type>
+    <return-value>null</return-value>
+    <synopsis> errno_t wcsncpy_s( wchar_t *restrict dest, rsize_t destsz,
+        const wchar_t *restrict src, rsize_t n);</synopsis>
+    <description>Same as (1), except that the function does not continue writing zeroes into the destination array to pad up to count,
+        it stops after writing the terminating null character (if there was no null in the source, it writes one at dest[count] and then stops).
+        Also, the following errors are detected at runtime and call the currently installed constraint handler function:
+        src or dest is a null pointer
+        destsz or count is zero or greater than RSIZE_MAX/sizeof(wchar_t)
+        count is greater or equal destsz, but destsz is less or equal wcsnlen_s(src, count),
+        in other words, truncation would occur
+        overlap would occur between the source and the destination strings</description>
+</sink>
+<sink>
+    <function-name> wcscpy </function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, src</parameter-order>
+    <parameter-type>wchar_t *,  const wchar_t * </parameter-type>
+    <return-type> wchar_t *</return-type>
+    <return-value> dst </return-value>
+    <synopsis>wchar_t *wcscpy(wchar_t *dest, const wchar_t *src)</synopsis>
+    <description> The wcscpy() function is the wide-character equivalent of the
+        strcpy(3) function.  It copies the wide-character string pointed to
+        by src, including the terminating null wide character (L'\0'), to the
+        array pointed to by dest.
+    </description>
+</sink>
+<sink>
+    <function-name> wcscpy_s </function-name>
+    <!-- microsoft-->
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, size_dst, src</parameter-order>
+    <parameter-type>wchar_t *restrict , rsize_t , const wchar_t *</parameter-type>
+    <return-type>errno_t</return-type>
+    <return-value> "" </return-value>
+    <synopsis>  errno_t wcscpy_s( wchar_t *restrict dest, rsize_t destsz, const wchar_t *restrict src );
+    </synopsis>
+    <description> Copies the wide string pointed to by src (including the terminating null wide character)
+        to wide character array pointed to by dest. The behavior is undefined if the dest array is not large enough.
+        The behavior is undefined if the strings overlap.
+    </description>
+</sink>
+<sink>
+    <function-name> strcpy_s</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, dst_size, src</parameter-order>
+    <parameter-type>char *restrict,rsize_t destsz, const char *restrict</parameter-type>
+    <return-type> errno_t</return-type>
+    <return-value>error</return-value>
+    <synopsis> errno_t strcpy_s(char *restrict dest, rsize_t destsz, const char *restrict src); </synopsis>
+    <description>  it may clobber the rest of the destination array with unspecified values and that the
+        following errors are detected at runtime and call the currently installed constraint handler function:
+        src or dest is a null pointer
+        destsz is zero or greater than RSIZE_MAX
+        destsz is less or equal strnlen_s(src, destsz); in other words, truncation would occur
+        overlap would occur between the source and the destination strings
+    </description>
+</sink>
+<sink>
+    <function-name> wcpncpy   </function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, src_size</parameter-order>
+    <parameter-type>wchar_t *,  const wchar_t *,size_t </parameter-type>
+    <return-type> wchar_t *</return-type>
+    <return-value> dst[src_size -1] </return-value>
+    <synopsis> wchar_t *wcpncpy(wchar_t *dest, const wchar_t *src, size_t n); </synopsis>
+    <description>copy  a fixed-size string of wide characters, returning a
+        pointer to its end.
+        The wcpncpy() function is the wide-character equivalent of the
+        stpncpy(3) function.  It copies at most n wide characters from the
+        wide-character string pointed to by src, including the terminating
+        null wide (L'\0'), to the array pointed to by dest.  Exactly n wide
+        characters are written at dest.  If the length wcslen(src) is smaller
+        than n, the remaining wide characters in the array pointed to by dest
+        are filled with L'\0' characters.  If the length wcslen(src) is
+        greater than or equal to n, the string pointed to by dest will not be
+        L'\0' terminated.
+        The strings may not overlap.
+        The programmer must ensure that there is room for at least n wide
+        characters at dest.
+    </description>
+</sink>
+<sink>
+    <function-name> wcpcpy</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, src</parameter-order>
+    <parameter-type>wchar_t *,  const wchar_t * </parameter-type>
+    <return-type> wchar_t *</return-type>
+    <return-value> dst[size_dst]  </return-value>
+    <synopsis>  wchar_t *wcpcpy(wchar_t *dest, const wchar_t *src);</synopsis>
+    <description>copy a wide-character string, returning a pointer to its end </description>
+</sink>
+<sink>
+    <function-name> stpcpy_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, src, num</parameter-order>
+    <parameter-type>char *, rsize_t , const char *, errno_t * </parameter-type>
+    <return-type> char *</return-type>
+    <return-value> The function returns a pointer to the end of the string in dest -
+        that is to the null terminator of dest - upon return. If an error occurs,
+        NULL is returned and err is set to the error encountered.   </return-value>
+    <synopsis>   char * stpcpy_s(char *dest, rsize_t dmax, const char *src, errno_t *err);</synopsis>
+    <description>The stpcpy_s function copies the string pointed to by src (including the terminating null character)
+        into the array pointed to by dest. All elements following the terminating null character (if any)
+        written by stpcpy_s in the array of dmax characters pointed to by dest are nulled when strcpy_s returns. </description>
+</sink>
+<sink>
+    <function-name>stpncpy_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, src, num</parameter-order>
+    <parameter-type>char *, rsize_t , const char *, errno_t * </parameter-type>
+    <return-type> char *</return-type>
+    <return-value> The function returns a pointer to the end of the string in dest -
+        that is to the null terminator of dest - upon return. If an error occurs,
+        NULL is returned and err is set to the error encountered.   </return-value>
+    <synopsis>  char * stpncpy_s(char *dest, rsize_t dmax, const char *src, rsize_t smax, errno_t *err)</synopsis>
+    <description>The stpncpy_s function copies at most smax characters from the string
+        pointed to by src, including the terminating null byte ('\0'), to the
+       array pointed to by dest. part of safeclib  </description>
+</sink>
+<sink>
+    <function-name> wcpcpy_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, src, num</parameter-order>
+    <parameter-type>wchar_t* , rsize_t , const wchar_t* , errno_t *</parameter-type>
+    <return-type> wchar_t *</return-type>
+    <return-value> returns a pointer to the end of the wide character string.  </return-value>
+    <synopsis> wchar_t * wcpcpy_s(wchar_t* dest, rsize_t dmax, const wchar_t* src, errno_t *err)</synopsis>
+    <description>copies the wide character string pointed to by src (including the terminating null character)
+        into the array pointed to by dest.  part of #include "safe_str_lib.h" </description>
+</sink>
+<sink>
+    <function-name> wcpncpy_s</function-name>
+    <parameter-number>5</parameter-number>
+    <parameter-order>dst, size_dst, src, len_src, num</parameter-order>
+    <parameter-type>wchar_t* , rsize_t , const wchar_t* , rsize_t , errno_t * </parameter-type>
+    <return-type>  wchar_t *</return-type>
+    <return-value> , and returns a pointer to the end of the wide character string. </return-value>
+    <synopsis> wchar_t * wcpncpy_s(wchar_t* dest, rsize_t dmax, const wchar_t* src, rsize_t slen, errno_t *err)</synopsis>
+    <description>copies not more than slen successive wide characters (characters that follow a null character are not copied)
+        from the array pointed to by src (including the terminating null character) into the array pointed to by dest</description>
+</sink>
+<sink>
+    <!-- safe from overread-->
+    <function-name> stpncpy   </function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, len_src</parameter-order>
+    <parameter-type>char *, const char *, size_t </parameter-type>
+    <return-type> char *   </return-type>
+    <return-value> dst[len_dst] </return-value>
+     <synopsis> char *stpncpy(char *dest, const char *src, size_t n);  </synopsis>
+    <description>  The stpncpy() function copies at most n characters from the string
+        pointed to by src, including the terminating null byte ('\0'), to the
+        array pointed to by dest.  Exactly n characters are written at dest.
+        If the length strlen(src) is smaller than n, the remaining characters
+        in the array pointed to by dest are filled with null bytes ('\0'), If
+        the length strlen(src) is greater than or equal to n, the string
+        pointed to by dest will not be null-terminated.
+    </description>
+</sink>
+<sink>
+    <function-name> stpcpy</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, src</parameter-order>
+    <parameter-type>char *, const char * </parameter-type>
+    <return-type> char *   </return-type>
+    <return-value>dst[len_src]   </return-value>
+    <synopsis> char *stpcpy(char *dest, const char *src);  </synopsis>
+    <description> The stpcpy() function copies the string pointed to by src (including
+        the terminating null byte ('\0')) to the array pointed to by dest.
+        The strings may not overlap, and the destination string dest must be
+        large enough to receive the copy.
+    </description>
+</sink>
+<sink>
+    <function-name> obstack_copy </function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src , len_src</parameter-order>
+    <parameter-type>struct obstack *, void *, int  </parameter-type>
+    <return-type>  void * </return-type>
+    <return-value> dst  </return-value>
+    <synopsis>  void * obstack_copy (struct obstack *obstack-ptr, void *address, int size);  </synopsis>
+    <description>  This allocates a block and initializes it by copying size bytes
+        of data starting at address. It calls obstack_alloc_failed_handler if allocation
+        of memory by obstack_chunk_alloc failed.</description>
+</sink>
+<sink>
+    <function-name> obstack_copy0 </function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src , len_src</parameter-order>
+    <parameter-type>struct obstack *, void *, int  </parameter-type>
+    <return-type>  void * </return-type>
+    <return-value> dst  </return-value>
+    <synopsis>  void * obstack_copy0 (struct obstack *obstack-ptr, void *address, int size);</synopsis>
+    <description>Like obstack_copy, but appends an extra byte containing a null character.
+        This extra byte is not counted in the argument size. The obstack_copy0 function is
+        convenient for copying a sequence of characters into an obstack</description>
+</sink>
+<sink>
+    <function-name>streadd</function-name>
+    <!-- Extended Library Functions -->
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, str</parameter-order>
+    <parameter-type> char *, const char *, const char *</parameter-type>
+    <return-type>char * </return-type>
+    <return-value>dst[size]</return-value>null
+    <!-- it returns the pointer to the null byte that terminates the output.   -->
+    <synopsis> char *streadd(char *output, const char *input, const char *exceptions);</synopsis>
+    <description>copies the input string, up to a null byte, to the output string, expanding non-graphic
+        characters to their equivalent C-language escape sequences (for example, n, 001).
+        The output argument must point to a space big enough to accommodate the result;
+        four times the space pointed to by input is guaranteed to be big enough
+        (each character could become  and 3 digits). Characters in the exceptions string are not expanded.
+        The exceptions argument may be zero, meaning all non-graphic characters are expanded. </description>
+</sink>
+<sink>
+    <function-name>strecpy</function-name>
+    <!--not a standard function -->
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, str</parameter-order>
+    <parameter-type> char *, const char *, const char *</parameter-type>
+    <return-type>char * </return-type>
+    <return-value> dst</return-value>
+    <synopsis>char *strecpy(char *output, const char *input, const char *exceptions); </synopsis>
+    <description>strecpy() copies the input string, up to a null byte, to the output string, expanding non-graphic
+        characters to their equivalent C-language escape sequences (for example, n, 001). The output argument
+        must point to a space big enough to accommodate the result; four times the space pointed to by input is
+        guaranteed to be big enough (each character could become  and 3 digits). Characters in the exceptions string are not expanded.
+        The exceptions argument may be zero, meaning all non-graphic characters are expanded.</description>
+</sink>
+<sink>
+    <function-name>strccpy</function-name>
+    <!-- not standrad-->
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst,src</parameter-order>
+    <parameter-type>char *, const char * </parameter-type>
+    <return-type>char * </return-type>
+    <return-value>dst</return-value>
+    <synopsis> char *strccpy(char *output, const char *input);</synopsis>
+    <description>strccpy() copies the input string, up to a null byte, to the output string, compressing the C-language
+        escape sequences (for example, n, 001) to the equivalent character. A null byte is appended to the output.
+        The output argument must point to a space big enough to accommodate the result.
+        If it is as big as the space pointed to by input it is guaranteed to be big enough.</description>
+</sink>
+<sink>
+    <function-name>strcadd</function-name>
+    <!-- not standrad-->
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst,src</parameter-order>
+    <parameter-type>char *, const char * </parameter-type>
+    <return-type>char * </return-type>
+    <return-value>dst[size]</return-value>
+    <synopsis> char *strcadd(char *output, const char *input); </synopsis>
+    <description>strcadd() copies the input string, up to a null byte, to the output string,
+        compressing the C-language escape sequences (for example, n, 001) to the equivalent character.
+        it returns the pointer to the null byte that terminates the output.</description>
+</sink>
+<!--not a standard function -->
+
+<sink>
+    <function-name>strtrns</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>str,str,str,dst</parameter-order>
+    <parameter-type> const char *, const char *, const char *, char *</parameter-type>
+    <return-type>char *</return-type>
+    <return-value>null</return-value>
+    <synopsis>char * strtrns(const char *string, const char *old, const char *new, char *result);
+    </synopsis>
+    <description> The strtrns() function transforms string and copies it into result .
+        Any character that appears in old is replaced with the character in the same position in new .
+        The new result is returned.</description>
+</sink>
+<!--    ===================== Memory operation (e.g.,memcpy, memmove)================================== -->
+<sink>
+    <function-name>wmemcpy</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-type>wchar_t* , const wchar_t* , size_t</parameter-type>
+    <parameter-order>dst,src,len_src</parameter-order>
+    <return-type>wchar_t *</return-type>
+    <return-value>dst</return-value>
+    <synopsis> wchar_t * wmemcpy (wchar_t *restrict wto, const wchar_t *restrict wfrom, size_t size)</synopsis>
+    <description>It copies n bytes from the object beginning at src into the object
+        pointed to by dest. </description>
+</sink>
+<sink>
+    <function-name>wmemcpy_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-type>wchar_t *restrict , rsize_t ,
+        const wchar_t *restrict , rsize_t </parameter-type>
+    <parameter-order>dst, size_dst,src,len_src</parameter-order>
+    <return-type>errno_t </return-type>
+    <return-value>eturn zero if there was not a runtime violation. Otherwise, a non-zero value is returned.</return-value>
+    <synopsis> errno_t wmemcpy_s( wchar_t *restrict dest, rsize_t destsz,
+        const wchar_t *restrict src, rsize_t count );</synopsis>
+    <description>It copies n bytes from the object beginning at src into the object
+        pointed to by dest. </description>
+</sink>
+<sink>
+    <function-name>mempcpy</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst,src,len_src</parameter-order>
+    <parameter-type> void *, const void *, size_t </parameter-type>
+    <return-type> void * </return-type>
+    <return-value> inx_dst </return-value>
+    <synopsis> void * mempcpy (void *restrict to, const void *restrict from, size_t size) </synopsis>
+    <description> It copies n bytes from the object beginning at src into the object
+        pointed to by dest.  But instead of returning the value of dest it
+        returns a pointer to the byte following the last written byte.
+        This function is useful in situations where a number of objects shall
+        be copied to consecutive memory positions.
+        itreturns a pointer to the byte following the last written byte.
+    </description>
+</sink>
+<sink>
+    <function-name>bcopy</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>src, dst, len_src</parameter-order>
+    <parameter-type> const void *, void *, size_t  </parameter-type>
+    <return-type> void</return-type>
+    <return-value>null</return-value>
+    <synopsis> void bcopy(const void *src, void *dest, size_t n);</synopsis>
+    <description>bcopy - copy byte sequence</description>
+</sink>
+<sink>
+    <function-name>wmemmove</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst,src,len_src</parameter-order>
+    <parameter-type>wchar_t* , const wchar_t* , size_t </parameter-type>
+    <return-type>wchar_t*</return-type>
+    <return-value> dst </return-value>
+    <synopsis>wchar_t* wmemmove (wchar_t* destination, const wchar_t* source, size_t num); </synopsis>
+    <description> Copies the values of num elements of type wchar_t from the location pointed by source
+        to the location pointed by destination. Copying takes place as if an
+        intermediate buffer were used, allowing the destination and source to overlap
+        be copied to consecutive memory positions.</description>
+</sink>
+<sink>
+    <function-name>wmemmove_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst, src,len_src</parameter-order>
+    <parameter-type>wchar_t *, rsize_t ,
+        const wchar_t *, rsize_t  </parameter-type>
+    <return-type>errno_t</return-type>
+    <return-value>eturn zero if there was not a runtime violation. Otherwise, a non-zero value is returned.</return-value>
+    <synopsis>errno_t wmemmove_s( wchar_t *dest, rsize_t destsz, const wchar_t *src, rsize_t count);</synopsis>
+    <description> Same as (1), except that the following errors are detected at runtime and
+        call the currently installed constraint handler function:
+        src or dest is a null pointer
+        destsz or count is greater than RSIZE_MAX/sizeof(wchar_t)
+        count is greater than destsz (overflow would occur) </description>
+</sink>
+<sink>
+    <function-name>memmove</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst,src,len_src</parameter-order>
+    <parameter-type>void *, const void * , size_t </parameter-type>
+    <return-type>void *</return-type>
+    <return-value> dst </return-value>
+    <synopsis>void *memmove(void *dest, const void *src, size_t n); </synopsis>
+    <description> The memmove() function copies n bytes from memory area src to memory area dest.
+        The memory areas may overlap: copying takes place as though the bytes in src are first copied into a
+        temporary array that does not overlap src or dest, and the bytes are then copied from the temporary array to dest.</description>
+</sink>
+<sink>
+    <function-name>memmove_s</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst,size_dst, src,len_src</parameter-order>
+    <parameter-type>void *, rsize_t , const void *, rsize_t </parameter-type>
+    <return-type>errno_t</return-type>
+    <return-value>returns 0 on successful completion, else a non-zero value</return-value>
+    <synopsis> errno_t memmove_s(void *dest, rsize_t destsz, const void *src, rsize_t count); </synopsis>
+    <description> copies count characters from the object pointed to by src into the object pointed to by dest. </description>
+</sink>
+<sink>
+    <function-name>memccpy</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst,src,char, len_src</parameter-order>
+    <parameter-type>void *, const void * , size_t </parameter-type>
+    <return-type>void *</return-type>
+    <return-value> inx_dst </return-value>
+    <synopsis>void *memccpy(void *dest, const void *src, int c, size_t n);</synopsis>
+    <description> The memccpy() function copies no more than n bytes from memory area src to memory area dest,
+        stopping when the character c is found.
+        If the memory areas overlap, the results are undefined.
+        The memccpy() function returns a pointer to the next character in dest after c,
+        or NULL if c was not found in the first n characters of src.
+    </description>
+</sink>
+<sink>
+    <function-name>memcpy</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, len_src</parameter-order>
+    <parameter-type> void *, const void *, size_t </parameter-type>
+    <return-type>void * </return-type>
+    <return-value> dst</return-value>
+    <synopsis> void *memcpy(void *dest, const void *src, size_t n);</synopsis>
+    <description>The memcpy() function copies n bytes from memory area src to memory area dest.
+        The memory areas must not overlap. Use memmove(3) if the memory areas do overlap.</description>
+</sink>
+<sink>
+    <function-name> mempcpy</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, len_src</parameter-order>
+    <parameter-type>void * , const void * , size_t</parameter-type>
+    <return-type> void*</return-type>
+    <return-value> dst +  dst[len_src]</return-value>
+    <synopsis>void *mempcpy(void *dest, const void *src, size_t n);
+    </synopsis>
+    <description> The mempcpy() function is nearly identical to the memcpy(3) function.
+        It copies n bytes from the object beginning at src into the object pointed to by dest.
+        But instead of returning the value of dest it returns a pointer to the byte following the last written byte.
+    </description>
+</sink>
+<sink>
+    <function-name> memcpy_s</function-name>
+    <!-- microsoft-->
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, size_dst , src, len_src</parameter-order>
+    <parameter-type>void *restrict , rsize_t ,
+        const void *restrict , rsize_t  </parameter-type>
+    <return-type>errno_t</return-type>
+    <return-value>return zero if there was not a runtime violation. Otherwise, a non-zero value is returned</return-value>
+    <synopsis>errno_t memcpy_s( void *restrict dest, rsize_t destsz, const void *restrict src, rsize_t count );</synopsis>
+    <description></description>
+</sink>
+<sink>
+    <function-name> wmempcpy</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, len_src</parameter-order>
+    <parameter-type>wchar_t *,  const wchar_t * , size_t</parameter-type>
+    <return-type> wchar_t *</return-type>
+    <return-value> dst +  dst[len_src]</return-value>
+    <synopsis> wchar_t *wmempcpy(wchar_t *dest, const wchar_t *src, size_t n); </synopsis>
+    <description> The wmempcpy() function is identical to mempcpy() but takes wchar_t
+        type arguments and copies n wide characters. </description>
+</sink>
+<!--    ===================== Memory write  ==================================-->
+<sink>
+    <!-- can overread if we could not have len_src > actual size_sc -->
+    <function-name>fwrite</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>src, unit_src , len_src, dst</parameter-order>
+    <parameter-type>const void *, size_t, size_t, FILE *</parameter-type>
+    <return-type>size_t </return-type>
+    <return-value>len_src</return-value>
+    <synopsis>size_t fwrite ( const void * ptr, size_t size, size_t count, FILE * stream );</synopsis>
+    <description>Writes an array of count elements, each one with a size of size bytes,
+        from the block of memory pointed by ptr to the current position in the stream.
+        The position indicator of the stream is advanced by the total number of bytes written.
+        Internally, the function interprets the block pointed by ptr as if it was an array of (size*count)
+        elements of type unsigned char, and writes them sequentially to stream as if fputc was called for each byte.</description>
+</sink>
+<sink>
+    <function-name> writev</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, src</parameter-order>
+    <parameter-type>int ,const struct iovec *,int</parameter-type>
+    <return-type>  ssize_t</return-type>
+    <return-value> len_src </return-value>
+    <synopsis>ssize_t writev(int fd, const struct iovec *iov, int iovcnt);</synopsis>
+    <description>The writev() system call writes iovcnt buffers of data described by iov to the file associated
+        with the file descriptor fd ("gather output"). writev() system call works just like write(2) except
+        that multiple buffers are written out.
+       The writev() function writes data to a file or socket with descriptor fs from a set of buffers.
+       The data is gathered from the buffers specified by iov[0]…iov[iovcnt-1].
+       When the descriptor refers to a socket, it must be a connected socket.  </description>
+</sink>
+<sink>
+    <function-name> pwritev</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, src, src, inx_dst</parameter-order>
+    <parameter-type>int ,const struct iovec *,int, off_t</parameter-type>
+    <return-type>  ssize_t</return-type>
+    <return-value> len_src </return-value>
+    <synopsis>ssize_t pwritev(int fd, const struct iovec *iov, int iovcnt,
+        off_t offset);</synopsis>
+    <description>The pwritev() system call combines the functionality of writev() and pwrite(2).
+        It performs the same task as writev(), but adds a fourth argument, offset,
+        which specifies the file offset at which the output operation is to be performed.
+    </description>
+</sink>
+<sink>
+    <function-name> pwrite</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, src, len_src, inx_dst</parameter-order>
+    <parameter-type>int, const void *, size_t , off_t </parameter-type>
+    <return-type>  ssize_t</return-type>
+    <return-value> len_src </return-value>
+    <synopsis>ssize_t pwrite(int fd, const void *buf, size_t count, off_t offset);
+    </synopsis>
+    <description>write to a file descriptor at a given offset</description>
+</sink>
+<sink>
+    <function-name> pwrite64</function-name>
+    <parameter-number>4</parameter-number>
+    <parameter-order>dst, src, size_len, inx_dst</parameter-order>
+    <parameter-type>int, const void *, size_t , off64_t </parameter-type>
+    <return-type>  ssize_t</return-type>
+    <return-value> len_src </return-value>
+    <synopsis>ssize_t pwrite64(int fildes, const void *buf, size_t nbyte, off64_t offset);
+        
+    </synopsis>
+    <description>write to a file descriptor at a given offset</description>
+</sink>
+<sink>
+    <function-name>write </function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>src , len_src </parameter-order>
+    <parameter-type>const char* , streamsize </parameter-type>
+    <return-type>ostream&amp;</return-type>
+    <return-value>null</return-value>
+    <synopsis> ostream&amp; write (const char* s, streamsize n);</synopsis>
+    <description>null</description>
+</sink>
+<sink>
+    <function-name>pwritev2</function-name>
+    <parameter-number>5</parameter-number>
+    <parameter-order>fd, src, len_src , ind_src, num</parameter-order>
+    <parameter-type> int, const struct iovec *, int , off_t , int </parameter-type>
+    <return-type> ssize_t</return-type>
+    <return-value>return the number of bytes written </return-value>
+    <synopsis>  ssize_t pwritev2(int fd, const struct iovec *iov, int iovcnt, off_t offset, int flags);</synopsis>
+    <description> write data into multiple buffers </description>
+</sink>
+<!-- miscs -->
+<sink>
+    <function-name>wctomb</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>dst, src</parameter-order>
+    <parameter-type>  char *, wchar_t</parameter-type>
+    <return-type> int</return-type>
+    <return-value>  The function returns the length in bytes of the
+        equivalent multibyte sequence pointed by pmb after the call.</return-value>
+    <synopsis> int wctomb (char* pmb, wchar_t wc);  </synopsis>
+    <description>The wide character wc is translated to its multibyte
+        equivalent and stored in the array pointed by pmb.</description>
+</sink>
+<sink>
+    <function-name>wcrtomb</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src,ptr </parameter-order>
+    <parameter-type>  char *, wchar_t, mbstate_t*</parameter-type>
+    <return-type> size_t</return-type>
+    <return-value> The function returns the length in bytes of the
+        equivalent multibyte sequence pointed by pmb.</return-value>
+    <synopsis> size_t wcrtomb (char* pmb, wchar_t wc, mbstate_t* ps);  </synopsis>
+    <description>The wide character wc is translated to its multibyte
+        equivalent and stored in the array pointed by pmb.</description>
+</sink>
+<sink>
+    <function-name>wcstombs</function-name>
+    <parameter-number>3</parameter-number>
+    <parameter-order>dst, src, len_src </parameter-order>
+    <parameter-type>  char *, const wchar_t*, size_t</parameter-type>
+    <return-type> size_t</return-type>
+    <return-value> The function returns the length in bytes of
+        the equivalent multibyte sequence pointed by pmb.</return-value>
+    <synopsis>size_t wcstombs (char* dest, const wchar_t* src, size_t max); </synopsis>
+    <description>Translates wide characters from the sequence pointed by src to the multibyte equivalent sequence
+        (which is stored at the array pointed by dest), up until either max bytes have been
+        translated or until a wide characters translates into a null character.
+    </description>
+</sink>
+<sink>
+    <function-name>realpath</function-name>
+    <parameter-number>2</parameter-number>
+    <parameter-order>src, dst</parameter-order>
+    <parameter-type> const char *, char *</parameter-type>
+    <return-type> char *</return-type>
+    <return-value>dst</return-value>
+    <synopsis>char *realpath(const char *path, char *resolved_path); </synopsis>
+    <bug> The POSIX.1-2001 standard version of this function is broken by design,
+        since it is impossible to determine a suitable size for the output buffer, resolved_path.
+        According to POSIX.1-2001 a buffer of size PATH_MAX suffices, but PATH_MAX need not be a defined constant,
+        and may have to be obtained using pathconf(3). And asking pathconf(3) does not really help, since,
+        on the one hand POSIX warns that the result of pathconf(3) may be huge and unsuitable for mallocing memory,
+        and on the other hand pathconf(3) may return -1 to signify that PATH_MAX is not bounded.
+        The resolved_path == NULL feature, not standardized in POSIX.1-2001,
+        but standardized in POSIX.1-2008, allows this design problem to be avoided. </bug>
+    <description>Be sure the destination buffer is at least MAXPATHLEN
+        big. This function may still internally overflow a static
+        buffer, try to avoid using it. If you must, check the size
+        the path your pass in is no longer than MAXPATHLEN
+        If there is no error, realpath() returns a pointer to the resolved_path.
+        Otherwise, it returns a NULL pointer, the contents of the array resolved_path are undefined,
+        and errno is set to indicate the error.
+    </description>
+</sink>
+</source-sink-native>
+
+
+<!--
+ ​The wide-character to multi-byte string conversion routines can create buffer overflows,
+ but currently no alternatives are provided. If enough requests are made that indicate
+ these functions are in wide use and safer alternatives are needed, these functions may
+ be added to the library extensions.
+ wcsrtombs()
+ wcsnrtombs()
+ https://github.com/intel/safestringlib/wiki/SDL-List-of-Banned-Functions
+ 
+ -->
+
